@@ -1,0 +1,10 @@
+app:
+  user:
+    name_max_length: 50
+    email_max_length: 255
+    password_min_length: 6
+    phone_max_length: 10
+    size: 5
+  uploaders:
+    picture:
+      size: 400

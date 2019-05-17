@@ -3,3 +3,6 @@ en:
   static_pages:
     home:
       title: "Home"
+  models:
+    user:
+      bug_size: "size picture not less than %{size}MB"
