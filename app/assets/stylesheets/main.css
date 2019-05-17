@@ -340,7 +340,6 @@ ul.sub-menu {
     transform: translateY(0);
   }
 }
-
 /*************************
 *******Footer CSS******
 **************************/
@@ -1650,7 +1649,6 @@ h2.title {
   font-size: 16px;
   text-align: center;
   font-family: 'Roboto',sans-serif;
-
 }
 
 
@@ -2244,7 +2242,6 @@ h2.title {
 }
 
 .blog-socials ul li {
-
   float: left;
   height: 17px;
   margin-right: 5px;

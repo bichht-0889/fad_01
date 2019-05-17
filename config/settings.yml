@@ -8,3 +8,10 @@ app:
   uploaders:
     picture:
       size: 400
+  mailers:
+    application:
+      email: "vantri27051998@gmail.com"
+config:
+  development:
+    port: "587"
+    host: "localhost:3000"

@@ -20,8 +20,8 @@ gem "sass-rails", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 
-gem "font-awesome-sass"
 gem "font-awesome-rails"
+gem "font-awesome-sass"
 gem "jquery-rails", "~> 4.3", ">= 4.3.3"
 
 group :development, :test do

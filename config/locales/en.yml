@@ -41,3 +41,32 @@ en:
     order: "Order Status"
     service: "Service"
     policies: "Policies"
+  controllers:
+    user:
+      sign_up_success: "Acount %{name} created date: %{date}. Please check
+                        your email to activate your account."
+    account_activation:
+      activate_success: "Account activated!"
+      activate_danger: "Invalid activation link"
+  users:
+    new:
+      title: "Sign up"
+      title_form: "New User Signup!"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      pass_confirm: "Confirmation"
+      phone: "Phone number"
+      address: "Address"
+      img_user: "user.jpg"
+  user_mailer:
+    account_activation:
+      title: "Food && Drink"
+      hi: "Hi"
+      welcom_to: "Welcome to the Food & Drink! Click on the link
+                  below to activate your account:"
+      activate: "Activate"
+  mailers:
+    user:
+      account_activation: "Account activation"
+

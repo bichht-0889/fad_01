@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_save{email.downcase!}
+  attr_accessor :activation_token
   has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :rates, dependent: :destroy
@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :product_rates, through: :rates, source: :product
   has_many :product_comments, through: :comments, source: :product
   has_many :categories, through: :sugests
+  before_save{email.downcase!}
+  before_create :create_activation_digest
   validates :name, presence: true,
              length: {maximum: Settings.app.user.name_max_length}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -30,5 +32,41 @@ class User < ApplicationRecord
     return unless picture.size > Settings.app.user.size.megabytes
     errors.add :picture, t("models.user.bug_size"),
       size: Settings.app.user.size
+  end
+
+  class << self
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+
+    def digest string
+      cost = if ActiveModel::SecurePassword.min_cost
+               BCrypt::Engine::MIN_COST
+             else
+               BCrypt::Engine.cost
+             end
+      BCrypt::Password.create(string, cost: cost)
+    end
+  end
+
+  def authenticated? atribute, token
+    digest = send("#{atribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  def activate
+    update_columns activated: true, activated_at: Time.zone.now
+  end
+
+  private
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest activation_token
   end
 end
