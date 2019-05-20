@@ -23,6 +23,7 @@ en:
     drinks: "Drinks"
     blog: "Blog"
     contact: "Contact"
+    ratingg: "Rating"
     toggle_navi: "Toggle navigation"
     recommend_item: "recommended items"
     all: "All"
@@ -35,6 +36,7 @@ en:
     all_items: "Hot Items"
     submit: "Submit"
     rating: "Rating: "
+    search: "Search"
   title:
     detail: "Detail"
   footer:
@@ -132,6 +134,7 @@ en:
       title: "Home"
     write_cmt: "Write Your Review"
     err_cmt: "Error"
+    product_not_found_rates: "Rates of product not found"
   helpers:
     session:
       bug_create_order: "Bug create order!"

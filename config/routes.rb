@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: :edit
   resources :products, only: %i(index show) do
     resources :comments
+    resources :rates
   end
   resources :carts, only: [:index, :show, :update]
   resources :order_items, only: %i(create update destroy)

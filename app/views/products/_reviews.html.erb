@@ -3,33 +3,69 @@
   <div class="col-sm-12">
     <ul class="nav nav-tabs">
       <li><a href="#details" data-toggle="tab"><%= t("label.details") %></a></li>
-      <li class="active"><a href="#reviews" data-toggle="tab"><%= t("label.reviews") %></a></li>
+      <li class="active"><a href="#ratingg" data-toggle="tab"><%= t("label.ratingg") %></a></li>
+      <li><a href="#reviews" data-toggle="tab"><%= t("label.reviews") %></a></li>
     </ul>
   </div>
   <div class="tab-content">
     <div class="tab-pane fade" id="details">
       <p><%= @product.description %></p>
     </div>
-
-    <div class="tab-pane fade active in" id="reviews">
-      <div class="col-sm-12">
-        <% @list_comment.each do |item|%>
-          <ul>
-            <li><a href=""><i class="fa fa-user"></i><%= item.name %></a></li>
-            <li><i class="fa fa-clock-o"></i> <%= item.created_at %></li>
-          </ul>
-          <p><%= item.content %></p>
-        <% end %>
-        <%= will_paginate @list_comment, class: "pagination" %>
-        <p><b><%= t("products.write_cmt") %></b></p>
-        <b><%= t("label.rating") %></b>
-        <%= form_for [@product, @comment] do |f| %>
+    <div class="tab-pane fade active in" id="ratingg">
+      <div>
+          <b><%= t("label.rating") %></b>
+          <%= form_for [@product, @rate] do |f| %>
+          <div class="rating-wrap-post">
+            <i id="1" class="fa fa-star" onclick="set('1')"></i>
+            <i id="2" class="fa fa-star" onclick="set('2')"></i>
+            <i id="3" class="fa fa-star" onclick="set('3')"></i>
+            <i id="4" class="fa fa-star" onclick="set('4')"></i>
+            <i id="5" class="fa fa-star" onclick="set('5')"></i>
+          </div>
+          <%= hidden_field_tag "rate[rating]" %>
           <%= f.text_area :content, rows: 3 %>
           <%= f.submit t("label.submit"), class: "btn btn-default pull-right", id: "submit_review" %>
+          <% end %>
+      </div>
+      <div class="row">
+        <% @list_rating.each do |item|%>
+        <div class="col-sm-10 offset-sm-1">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="rating">
+                <div class="rateyo-readonly-user"></div>(<%= item.rating %>/5)
+              </div>
+            </div>
+            <div class="col-sm-2">
+                <i class="fa fa-user"></i><%= item.name %>
+                <p class="rating_point hidden"><%= item.rating %></p>
+              </div>
+              <div class="col-sm-3"><i class="fa fa-clock-o"></i> <%= item.created_at %></div>
+          </div>
+        </div>
         <% end %>
+        <%= will_paginate @list_rating, class: "pagination" %>
       </div>
     </div>
 
+    <div class="tab-pane fade" id="reviews">
+      <div class="col-sm-12">
+        <% @list_comment.each do |item|%>
+        <ul>
+          <li><a href=""><i class="fa fa-user"></i><%= item.name %></a></li>
+          <li><i class="fa fa-clock-o"></i> <%= item.created_at %></li>
+        </ul>
+        <p><%= item.content %></p>
+        <% end %>
+        <%= will_paginate @list_comment, class: "pagination" %>
+        <p><b><%= t("products.write_cmt") %></b></p>
+        <%= form_for [@product, @comment] do |f| %>
+        <%= f.text_area :content, rows: 3 %>
+        <%= f.submit t("label.submit"), class: "btn btn-default pull-right", id: "submit_review" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 <!--/category-tab-->
+<%= javascript_include_tag "rating.js" %>

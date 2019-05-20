@@ -16,9 +16,12 @@ class ProductsController < ApplicationController
     @list_cmt = @product.comments.order_desc
     @list_comment = @list_cmt.paginate(page: params[:page],
       per_page: Settings.pages.per_page5)
+    @list_rating = @product.rates.paginate(page: params[:page],
+    per_page: Settings.pages.per_page10)
     @rates = @product.rates
     @order_item = current_order.order_items.new if logged_in?
     @comment = @product.comments.new
+    @rate = @product.rates.new
   end
 
   private
