@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  skip_authorization_check
   include ProductsHelper
   before_action :load_filter, only: :home
 

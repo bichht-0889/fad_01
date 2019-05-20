@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :check_loggin, :check_role_admin
+  authorize_resource
 
   def new
     @category = Category.new

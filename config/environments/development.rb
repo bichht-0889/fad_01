@@ -34,11 +34,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.delivery_method = :smtp
-  host = Settings.config.development.host
+  host = "localhost:3000"
   config.action_mailer.default_url_options = {host: host, protocol: "http"}
   ActionMailer::Base.smtp_settings = {
     address: ENV["ADDRESS"],
-    port: Settings.config.development.port,
+    port: ENV["PORT"],
     authentication: :plain,
     user_name: ENV["USER_NAME"],
     password: ENV["PASSWORD"],

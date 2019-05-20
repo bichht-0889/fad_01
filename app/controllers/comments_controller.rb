@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :logged_in_user, only: %i(create)
+  authorize_resource
 
   def create
     load_product

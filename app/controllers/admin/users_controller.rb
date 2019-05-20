@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :check_loggin, :check_role_admin
+  authorize_resource
   before_action :load_user, except: %i(index create new)
 
   def index
@@ -44,7 +44,6 @@ class Admin::UsersController < ApplicationController
     flash[:info] = t "controllers.admin.user.not_found"
     redirect_to admin_users_path
   end
-
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :phone, :address, :picture

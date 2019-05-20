@@ -1,5 +1,5 @@
 class Admin::StatisticsController < ApplicationController
-  before_action :check_loggin, :check_role_admin
+  authorize_resource class: false
 
   def index
     unless params[:first] && params[:last]

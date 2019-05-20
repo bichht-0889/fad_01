@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :check_loggin, :check_role_admin
+  authorize_resource
   before_action :load_products, only: %i(edit update destroy)
 
   def new

@@ -1,5 +1,6 @@
 class SugestsController < ApplicationController
-  before_action :load_category, only: %i(create)
+  authorize_resource
+  before_action :load_category, only: :create
   def index
     @categories = Category.all
   end

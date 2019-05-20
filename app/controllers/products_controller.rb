@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   include ProductsHelper
+  authorize_resource
   before_action :load_filter, only: :index
   before_action :load_product, only: :show
 
