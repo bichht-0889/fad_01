@@ -1,14 +1,11 @@
 class ProductsController < ApplicationController
-  include ProductsHelper
   authorize_resource
-  before_action :load_filter, only: :index
-  before_action :load_product, only: :show
+  before_action :load_data, only: :index
 
   def index
-    load_products
-    @cur_slide_items = load_trend_items.take(Settings.products.cur_slide_items)
-    @trend_items = load_trend_items.drop(Settings.products.cur_slide_items)
-    @new_products = load_new_product
+    @products = @q.result.includes(:category).paginate(page: params[:page],
+      per_page: Settings.pages.per_page9)
+    @order_item = current_order.order_items.new if user_signed_in?
   end
 
   def show
@@ -18,14 +15,13 @@ class ProductsController < ApplicationController
     @list_comment = @list_cmt.paginate(page: params[:page],
       per_page: Settings.pages.per_page5)
     @rates = @product.rates
-    @order_item = current_order.order_items.new if logged_in?
+    @order_item = current_order.order_items.new if user_signed_in?
     @comment = @product.comments.new
   end
 
   private
 
-  def load_hot_items
-    @cur_slide_items = load_trend_items.take(Settings.products.cur_slide_items)
-    @trend_items = load_trend_items.drop(Settings.products.cur_slide_items)
+  def load_data
+    @data = ProductLib.new.load_data
   end
 end

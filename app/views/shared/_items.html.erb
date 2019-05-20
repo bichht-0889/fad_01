@@ -1,9 +1,25 @@
 <div class="features_items">
-  <h2 class="title text-center"><%= t("label.items") %></h2>
-  <div class="row">
-    <%= render @products %>
-  </div>
-  <div class="row">
-    <%= will_paginate @products, class: "pagination" %>
-  </div>
+  <h2 class="title text-center">
+    <div class="row"><%= t("label.items") %></div>
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <%= content_tag :table do %>
+          <%= content_tag :th, "Sort by: ", class: "sort_link" %>
+          <%= content_tag :th, sort_link(@q, :name, "Name") %>
+          <%= content_tag :th, sort_link(@q, :price, "Price") %>
+          <%= content_tag :th, sort_link(@q, :avg_rating, "Rates") %>
+        <% end %>
+      </div>
+    </div>
+  </h2>
+  <% if @products.any? %>
+    <div class="row">
+      <%= render @products %>
+    </div>
+    <div class="row">
+      <%= will_paginate @products, class: "pagination" %>
+    </div>
+  <% else %>
+    <h3>No item</h3>
+  <% end %>
 </div>

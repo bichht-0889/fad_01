@@ -1,13 +1,16 @@
 class StaticPagesController < ApplicationController
   skip_authorization_check
-  include ProductsHelper
-  before_action :load_filter, only: :home
+  before_action :load_data, only: :home
 
   def home
-    @load_products = load_products
-    @cur_slide_items = load_trend_items.take(Settings.products.cur_slide_items)
-    @trend_items = load_trend_items.drop(Settings.products.cur_slide_items)
-    @new_products = load_new_product
-    @order_item = current_order.order_items.new if logged_in?
+    @products = @q.result.includes(:category).paginate(page: params[:page],
+      per_page: Settings.pages.per_page9)
+    @order_item = current_order.order_items.new if user_signed_in?
+  end
+
+  private
+
+  def load_data
+    @data = ProductLib.new.load_data
   end
 end

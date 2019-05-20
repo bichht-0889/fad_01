@@ -1,0 +1,12 @@
+<%= provide :title, t(".title") %>
+<section>
+  <div class="container">
+    <div class="row">
+      <%= render "shared/sidebar" %>
+      <div class="col-sm-9 padding-right">
+        <%= render "shared/items" %>
+        <%= render "shared/hot_items" %>
+      </div>
+    </div>
+  </div>
+</section>

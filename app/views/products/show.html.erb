@@ -43,7 +43,7 @@
               <label><%= t("label.price") %></label>
               <span><%= number_to_currency @product.price %></span><br>
               <label><%= t("label.quantity") %></label>
-              <% if logged_in? %>
+              <% if user_signed_in? %>
                 <%= form_for @order_item, remote: true do |f| %>
                 <div>
                   <label><%= t("label.quantity") %></label>

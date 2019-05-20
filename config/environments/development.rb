@@ -38,7 +38,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {host: host, protocol: "http"}
   ActionMailer::Base.smtp_settings = {
     address: ENV["ADDRESS"],
-    port: ENV["PORT"],
+    port: ENV["PORT_MAIL"],
     authentication: :plain,
     user_name: ENV["USER_NAME"],
     password: ENV["PASSWORD"],

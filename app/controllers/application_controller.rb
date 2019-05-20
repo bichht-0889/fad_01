@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
-  include SessionsHelper
+  include ApplicationHelper
   check_authorization
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :load_query
 
   def self.default_url_options
     {locale: I18n.locale}
@@ -25,5 +26,11 @@ class ApplicationController < ActionController::Base
       flash[:danger] = exception.message
       redirect_to signin_path
     end
+  end
+
+  private
+
+  def load_query
+    @q = Product.ransack(params[:q])
   end
 end

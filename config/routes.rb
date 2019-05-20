@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root "static_pages#home"
+
+  get "search" => "searchs#index"
+  post "search" => "searchs#index"
   
   devise_scope :user do
     get "signin" => "devise/sessions#new"
