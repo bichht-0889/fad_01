@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  before_action :admin_user
+  before_action :check_loggin, :check_role_admin
   before_action :load_user, except: %i(index create new)
 
   def index

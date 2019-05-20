@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :orders
     resources :users
+    resources :statistics
   end
 end
