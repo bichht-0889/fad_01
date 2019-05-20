@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="col-md-6 col-md-ofset-3">
+    <div class="card">
+      <%= image_tag @order.user.picture.url.to_s %>
+      <div class="container">
+        <h4><b><%= @order.total_price %></b></h4>
+      </div>
+    </div>
+  </div>
+</div>

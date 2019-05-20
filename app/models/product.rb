@@ -7,6 +7,9 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_items
   has_many :user_rates, through: :rates, source: :user
   has_many :user_comments, through: :comments, source: :user
+  scope :get_category_id, ->(category_id){product category_id}
 
-  scope :get_category_id, ->(category_id){where(category_id: category_id) if category_id.first.present?}
+  def self.product category_id
+    (where category_id: category_id) if category_id.present?
+  end
 end

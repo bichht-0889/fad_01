@@ -4,4 +4,5 @@ class Category < ApplicationRecord
   has_many :users, through: :sugests
   validates :name, presence: true
   enum status: {close: 0, open: 1}
+  default_scope{where status: open}
 end

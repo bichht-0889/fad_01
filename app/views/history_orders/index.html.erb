@@ -1,0 +1,56 @@
+<div class="container">
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home"><%= t ".confirm" %></a></li>
+    <li><a data-toggle="tab" href="#menu1"><%= t ".cancel" %></a></li>
+    <li><a data-toggle="tab" href="#menu2"><%= t ".accept" %></a></li>
+    <li><a data-toggle="tab" href="#menu3"><%= t ".refuse" %></a></li>
+    <li><a data-toggle="tab" href="#menu4"><%= t ".finish" %></a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3><%= t ".confirm" %></h3>
+      <% if @order_confirm.present? %>
+        <%= render @order_confirm %>
+      <% else %>
+        <b><i><%= t ".no_confirm" %></i></b>
+      <% end %>
+    </div>
+
+    <div id="menu1" class="tab-pane fade">
+      <h3><%= t ".cancel" %></h3>
+      <% if @order_cancel.present? %>
+        <%= render @order_cancel %>
+      <% else %>
+        <b><i><%= t ".no_cancel" %></i></b>
+      <% end %>
+    </div>
+
+    <div id="menu2" class="tab-pane fade">
+      <h3><%= t ".accept" %></h3>
+      <% if @order_accept.present? %>
+        <%= render @order_accept %>
+      <% else %>
+        <b><i><%= t ".no_accept" %></i></b>
+      <% end %>
+    </div>
+
+    <div id="menu3" class="tab-pane fade">
+      <h3><%= t ".refuse" %></h3>
+      <% if @order_refuse.present? %>
+        <%= render @order_refuse %>
+      <% else %>
+        <b><i><%= t ".no_refuse" %></i></b>
+      <% end %>
+    </div>
+
+    <div id="menu4" class="tab-pane fade">
+      <h3><%= t ".finish" %></h3>
+      <% if @order_finish.present? %>
+        <%= render @order_finish %>
+      <% else %>
+        <b><i><%= t ".no_finish" %></i></b>
+      <% end %>
+    </div>
+  </div>
+</div>

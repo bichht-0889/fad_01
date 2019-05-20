@@ -1,0 +1,5 @@
+<% if @order.errors.any?  %>
+  alert(I18n.t('evaluators.alert.bug'))
+<% else %>
+  $('.cart-text').html('<%= current_order.order_items.size %>')
+<% end %>
