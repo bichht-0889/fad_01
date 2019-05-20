@@ -104,25 +104,37 @@
           <div class="row">
             <div class="col-md-6">
               <h6 class="text-center">Best seller</h6>
-              <ul>
-                <% @stock_take_desc.take(5).each do |product| %>
-                <li>
-                  <div class="col-md-6"><%= product[0] %></div>
-                  <div class="col-md-6"><%= product[1] %></div>
-                </li>
-                <% end %>
-              </ul>
+              <table>
+                  <tr>
+                    <th class="col-md-4">Name</th>
+                    <th class="col-md-4">Quantity</th>
+                    <th class="col-md-4">Price</th>
+                  </tr>
+                  <% @stock_take.sort_by{|a, b, c| -b}.take(5).each do |product| %>
+                  <tr>
+                    <td class="col-md-4"><%= product[0] %></td>
+                    <td class="col-md-4"><%= product[1] %></td>
+                    <td class="col-md-4"><%= product[2] %></td>
+                  </tr>
+                  <% end %>
+                </table>
             </div>
             <div class="col-md-6">
-              <h6 class="text-center">Bad seller</h6>
-              <ul>
-                <% @stock_take_asc.take(5).each do |product| %>
-                <li>
-                  <div class="col-md-6"><%= product[0] %></div>
-                  <div class="col-md-6"><%= product[1] %></div>
-                </li>
+              <h6 class="text-center">High Total Price</h6>
+              <table>
+                <tr>
+                  <th class="col-md-4">Name</th>
+                  <th class="col-md-4">Quantity</th>
+                  <th class="col-md-4">Price</th>
+                </tr>
+                <% @stock_take.sort_by{|a, b, c| -c}.take(5).each do |product| %>
+                <tr>
+                  <td class="col-md-4"><%= product[0] %></td>
+                  <td class="col-md-4"><%= product[1] %></td>
+                  <td class="col-md-4"><%= product[2] %></td>
+                </tr>
                 <% end %>
-              </ul>
+              </table>
             </div>
           </div>
         </div>

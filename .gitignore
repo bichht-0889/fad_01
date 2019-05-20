@@ -52,7 +52,8 @@ config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
 /public/uploads
-
+/public/upload/*
+/public/assets
 # Ignore application configuration
 /config/application.yml
 /config/database.yml

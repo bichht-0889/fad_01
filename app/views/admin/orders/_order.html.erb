@@ -30,6 +30,10 @@
             <span><%= link_to t(".refuse"), admin_order_path(order, status: :refuse), method: :put, data: {confirm: I18n.t("evaluators.alert.confirm_cancel")}, class: "btn btn-danger" %>
             </span>
           <% end %>
+          <% if order.accept? %>
+            <span><%= link_to t(".finish"), admin_order_path(order, status: :finish), method: :put, data: {confirm: I18n.t("evaluators.alert.finish")}, class: "btn btn-success" %>
+            </span>
+          <% end %>
         </p>
       </td>
     </tr>

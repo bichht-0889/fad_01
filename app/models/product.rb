@@ -8,8 +8,14 @@ class Product < ApplicationRecord
   has_many :user_rates, through: :rates, source: :user
   has_many :user_comments, through: :comments, source: :user
   mount_uploader :picture, PictureUploader
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :quantity, presence: true
+  validates :description, presence: true
+  validates :category_id, presence: true
   scope :get_category_id, ->(category_id){product category_id}
-
+  scope :asc_name, ->{order name: :asc}
+  mount_uploader :picture, PictureUploader
   def self.product category_id
     (where category_id: category_id) if category_id.present?
   end

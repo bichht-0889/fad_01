@@ -12,6 +12,8 @@ class Admin::OrdersController < ApplicationController
       accept
     elsif params[:status] == Settings.app.admin.orders.refuse
       refuse
+    elsif params[:status] == Settings.app.admin.orders.finish
+      finish
     else
       flash[:info] = t "controllers.admin.order.not_found_status"
       redirect_to admin_orders_path
@@ -33,6 +35,12 @@ class Admin::OrdersController < ApplicationController
     @order.refuse!
     @order.cancel_quatity_product
     flash[:info] = t "controllers.admin.order.refuse_success"
+    redirect_to admin_orders_path
+  end
+
+  def finish
+    @order.finish!
+    flash[:success] = t "controllers.admin.order.finish_success"
     redirect_to admin_orders_path
   end
 

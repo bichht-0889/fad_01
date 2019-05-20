@@ -40,11 +40,12 @@ en:
     history_order: "History order"
     cr_suggestion: "Create product by customer'suggestion"
     search: "Search"
+    manage_user: "Manage Users"
+    manage_order: "Manage Orders"
+    statis: "Statistical"
   title_1:
     detail: "Detail"
     admin: "Admin"
-    manage_user: "Manage Users"
-    manage_order: "Manage Orders"
   footer:
     copyright: "Copyright © 2019 Foods & Drinks. All rights reserved."
     text1: "Get the most recent updates from
@@ -101,6 +102,7 @@ en:
       product_not_found: "Product not found!"
     cart:
       order_not_exists: "Order not exists!"
+      bug_checkout: "Confirm order failure!"
     checkout:
       order_not_exists: "Order not exists!"
     history_order:
@@ -118,6 +120,7 @@ en:
         not_found_order: "Order not found!"
         accept_success: "Order Aceepted!"
         refuse_success: "Order Refused!"
+        finish_success: "Order Finish!"
         bug_update: "Bug update: %{name}!"
         not_found_status: "Access bug!"
       sugests:
@@ -131,6 +134,13 @@ en:
         cate_success: "Created new category"
         cate_fisrt: "Please create category: '%{name}' first"
         not_found: "Not found"
+      product:
+        post_success: "Product add successfully!"
+        post_danger: "Product add bug!"
+        not_found: "Product not found!"
+        update_success: "Update product successfully!"
+        delete_success: "Delete product successfully!"
+        delete_bug: "Delete product bug!"
   users:
     new:
       title: "Sign up"
@@ -200,6 +210,9 @@ en:
     user:
       account_activation: "Account activation"
       statistical: "Statistical"
+    order:
+      order_confirm: "Confirm order"
+      order_info: "Info order"
   uploaders:
     img: "user.jpg"
 
@@ -218,6 +231,8 @@ en:
   carts:
     index:
       title: "Shop cart"
+    show:
+      total_price: "Total Price"
   shared:
     cart:
       home: "Home"
@@ -234,6 +249,8 @@ en:
       histotry: "History"
       checkout: "Check Out"
       time: "Time"
+    error_messages:
+      shared: "total bug : %{count}"
   orders:
     order:
       name: "Name"
@@ -262,9 +279,14 @@ en:
       bug: "not valid."
       confirm_delete: "Are you sure?"
       confirm_cancel: "Are you cancel?"
+      finish: "Are you finish?"
   categories:
     category_not_found: "Category is not found"
     cate_created: "Category created"
+  alert:
+    bug: "not valid."
+    confirm_delete: "Are you sure?"
+    confirm_cancel: "Are you cancel?"
   admin:
     users:
       index:
@@ -304,3 +326,52 @@ en:
     all_order: "All Order"
     all_product: "All Product"
     detail: "Detail"
+    products:
+      form:
+        name: "Name"
+        price: "Price"
+        quantity: "Quantity"
+        description: "Description"
+        post: "Post"
+      new:
+        title: "Admin Product"
+        button: "Add Product"
+      index:
+        title: "List Product"
+        total_product: "Total Product"
+        image: "Image"
+        name: "Name"
+        price: "Price"
+        quantity: "Quantity"
+        rating: "Rating"
+        control: "Control"
+        button: "Add Product"
+      edit:
+        title: "Upade Product"
+        button: "Save"
+  order_mailer:
+    order_confirm:
+      name: "Name"
+      quantity: "Quantity"
+      subtotal: "SubTotal"
+      status: "Status"
+      cancel: "Cancel"
+      are_you_sure: "Are you Sure?"
+      accept: "Accept"
+      refuse: "Refuse"
+      member: "Member"
+    order_info:
+      hi: "Hi %{name}"
+      thanks: "Thank you for buying"
+      name: "Name"
+      quantity: "Quantity"
+      subtotal: "SubTotal"
+      status: "Status"
+      cancel: "Cancel"
+      info_order: "Information Order"
+      total_price: "Total Price"
+  spec:
+    model:
+      name_blank: "can't be blank"
+      is_invalid: "is invalid"
+      email_already: "has already been taken"

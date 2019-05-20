@@ -60,6 +60,7 @@ end
    created_at: (rand*100).days.ago)
 end
 
+<<<<<<< HEAD
 Category.create!(name: "Foods", status: 1)
 Category.create!(name: "Drinks", status: 1)
 
@@ -71,17 +72,53 @@ Category.create!(name: "Drinks", status: 1)
   description = Faker::Lorem.sentence
   picture = nil
   avg_rating = 0
+=======
+# 10.times do |n|
+#   product_id = 3
+#   user_id = "#{n + 1}"
+#   content = "Good, phuc vu chu dao"
+# Comment.create!(
+#   product_id: product_id,
+#   user_id: user_id,
+#   content: content
+# )
+# end
+# OrderItem.create!(
+#   order_id: 6,
+#   product_id: 35,
+#   price: 30,
+#   quantity: 2
+# )
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+Category.create!(name: "Foods", status: 1)
+Category.create!(name: "Drinks", status: 1)
 
-  Product.create!(
-    category_id: category_id,
-    name: name,
-    price: price,
-    quantity: quantity,
-    description: description,
-    avg_rating: avg_rating,
-    picture: picture
-  )
-end
+# 25.times do |n|
+#   category_id = 1
+#   name = "Foods#{n+1}"
+#   price = 200
+#   quantity = 10
+#   description = "Ngon, bổ, rẻ"
+#   picture = "https://i.ibb.co/BZtH15r/banhmi.jpg"
+#   avg_rating = 4.3
+>>>>>>> order mail
+
+#   Product.create!(
+#     category_id: category_id,
+#     name: name,
+#     price: price,
+#     quantity: quantity,
+#     description: description,
+#     avg_rating: avg_rating,
+#     picture: picture
+#   )
+# end
 
 47.times do |n|
   category_id = 2
@@ -92,16 +129,16 @@ end
   picture = nil
   avg_rating = 0
 
-  Product.create!(
-    category_id: category_id,
-    name: name,
-    price: price,
-    quantity: quantity,
-    description: description,
-    avg_rating: avg_rating,
-    picture: picture
-  )
-end
+#   Product.create!(
+#     category_id: category_id,
+#     name: name,
+#     price: price,
+#     quantity: quantity,
+#     description: description,
+#     avg_rating: avg_rating,
+#     picture: picture
+#   )
+# end
 
 247.times do |n|
   user_id = Faker::Number.between(1, 100)

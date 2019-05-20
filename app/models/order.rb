@@ -12,9 +12,9 @@ class Order < ApplicationRecord
   scope :period_time, -> do
     where created_at: (Time.now - Settings.statis.one.month)..Time.now
   end
-  scope :date_start, ->(start){where("created_at >= ?",start)}
-  scope :date_end, ->(date_end){where("created_at <= ?",date_end)}
-  scope :revenue, -> {sum("total_price")}
+  scope :date_start, ->(start){where("created_at >= ?", start)}
+  scope :date_end, ->(date_end){where("created_at <= ?", date_end)}
+  scope :revenue, ->{sum("total_price")}
   def confirm_quantity_product
     order_items.map do |order_item|
       @quantity = order_item.product.quantity
@@ -52,5 +52,13 @@ class Order < ApplicationRecord
     order_items.reduce(0) do |sum, order_item|
       order_item.valid? ? sum + (order_item.quantity * order_item.price) : 0
     end
+  end
+
+  def order_mail_confirm
+    OrderMailer.order_confirm(self).deliver_now
+  end
+
+  def order_mail_user
+    OrderMailer.order_info(self).deliver_now
   end
 end

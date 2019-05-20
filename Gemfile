@@ -25,6 +25,8 @@ gem "uglifier", ">= 1.3.0"
 gem "font-awesome-rails"
 gem "font-awesome-sass"
 gem "jquery-rails", "~> 4.3", ">= 4.3.3"
+gem "rails-controller-testing"
+gem "rateyo-rails"
 gem "whenever", require: false
 gem "will_paginate"
 
@@ -34,6 +36,8 @@ gem "rateyo-rails"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "factory_bot_rails"
+  gem "rspec-rails"
 end
 
 group :production do
@@ -52,6 +56,7 @@ group :test do
   gem "capybara", ">= 2.15"
   gem "chromedriver-helper"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "~> 3.0", require: false
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

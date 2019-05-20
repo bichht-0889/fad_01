@@ -3,12 +3,10 @@ class SugestsController < ApplicationController
   def index
     @categories = Category.all
   end
-  
+
   def create
     @sugest = current_user.sugests.build sugest_params
-    unless params[:sugest][:new_category].blank?
-      @sugest.status = 1
-    end
+    @sugest.status = 1 unless params[:sugest][:new_category].blank?
     if @sugest.save
       flash[:success] = t "suggestions.create_success"
       redirect_to sugests_path

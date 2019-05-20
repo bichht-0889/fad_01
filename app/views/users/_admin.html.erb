@@ -15,12 +15,19 @@
         <li>
           <i class="fa fa-user"></i>
           <%= link_to t("label.manage_user"), admin_users_path %>
-        </li><br>
+        </li>
         <li>
           <i class="fa fa-bookmark"></i>
           <%= link_to t("label.manage_order"), admin_orders_path %>
         </li>
-        <br>
+        <li>
+          <i class="fa fa-bookmark"></i>
+          <%= link_to t("label.manage_product"), admin_products_path %>
+        </li>
+        <li>
+          <i class="fa fa-bookmark"></i>
+          <%= link_to t("label.manage_categories"), categories_path %>
+        </li>
         <li>
           <i class="fa fa-yelp"></i>
           <%= link_to t("label.manage_suggestion"), admin_sugests_path %>

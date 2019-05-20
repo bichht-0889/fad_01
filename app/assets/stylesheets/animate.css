@@ -27,19 +27,19 @@ animation-fill-mode: both;
 animation-duration: 2s;
 }
 @-webkit-keyframes flash {
-0%, 50%, 100% {opacity: 1;}	
+0%, 50%, 100% {opacity: 1;}
 25%, 75% {opacity: 0;}
 }
 @-moz-keyframes flash {
-0%, 50%, 100% {opacity: 1;}	
+0%, 50%, 100% {opacity: 1;}
 25%, 75% {opacity: 0;}
 }
 @-o-keyframes flash {
-0%, 50%, 100% {opacity: 1;}	
+0%, 50%, 100% {opacity: 1;}
 25%, 75% {opacity: 0;}
 }
 @keyframes flash {
-0%, 50%, 100% {opacity: 1;}	
+0%, 50%, 100% {opacity: 1;}
 25%, 75% {opacity: 0;}
 }
 .animated.flash {
@@ -101,28 +101,28 @@ animation-name: shake;
 animation-name: bounce;
 }
 @-webkit-keyframes tada {
-0% {-webkit-transform: scale(1);}	
+0% {-webkit-transform: scale(1);}
 10%, 20% {-webkit-transform: scale(0.9) rotate(-3deg);}
 30%, 50%, 70%, 90% {-webkit-transform: scale(1.1) rotate(3deg);}
 40%, 60%, 80% {-webkit-transform: scale(1.1) rotate(-3deg);}
 100% {-webkit-transform: scale(1) rotate(0);}
 }
 @-moz-keyframes tada {
-0% {-moz-transform: scale(1);}	
+0% {-moz-transform: scale(1);}
 10%, 20% {-moz-transform: scale(0.9) rotate(-3deg);}
 30%, 50%, 70%, 90% {-moz-transform: scale(1.1) rotate(3deg);}
 40%, 60%, 80% {-moz-transform: scale(1.1) rotate(-3deg);}
 100% {-moz-transform: scale(1) rotate(0);}
 }
 @-o-keyframes tada {
-0% {-o-transform: scale(1);}	
+0% {-o-transform: scale(1);}
 10%, 20% {-o-transform: scale(0.9) rotate(-3deg);}
 30%, 50%, 70%, 90% {-o-transform: scale(1.1) rotate(3deg);}
 40%, 60%, 80% {-o-transform: scale(1.1) rotate(-3deg);}
 100% {-o-transform: scale(1) rotate(0);}
 }
 @keyframes tada {
-0% {transform: scale(1);}	
+0% {transform: scale(1);}
 10%, 20% {transform: scale(0.9) rotate(-3deg);}
 30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
 40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);}
@@ -136,31 +136,31 @@ animation-name: tada;
 }
 @-webkit-keyframes swing {
 20%, 40%, 60%, 80%, 100% { -webkit-transform-origin: top center; }
-20% { -webkit-transform: rotate(15deg); }	
+20% { -webkit-transform: rotate(15deg); }
 40% { -webkit-transform: rotate(-10deg); }
-60% { -webkit-transform: rotate(5deg); }	
-80% { -webkit-transform: rotate(-5deg); }	
+60% { -webkit-transform: rotate(5deg); }
+80% { -webkit-transform: rotate(-5deg); }
 100% { -webkit-transform: rotate(0deg); }
 }
 @-moz-keyframes swing {
-20% { -moz-transform: rotate(15deg); }	
+20% { -moz-transform: rotate(15deg); }
 40% { -moz-transform: rotate(-10deg); }
-60% { -moz-transform: rotate(5deg); }	
-80% { -moz-transform: rotate(-5deg); }	
+60% { -moz-transform: rotate(5deg); }
+80% { -moz-transform: rotate(-5deg); }
 100% { -moz-transform: rotate(0deg); }
 }
 @-o-keyframes swing {
-20% { -o-transform: rotate(15deg); }	
+20% { -o-transform: rotate(15deg); }
 40% { -o-transform: rotate(-10deg); }
-60% { -o-transform: rotate(5deg); }	
-80% { -o-transform: rotate(-5deg); }	
+60% { -o-transform: rotate(5deg); }
+80% { -o-transform: rotate(-5deg); }
 100% { -o-transform: rotate(0deg); }
 }
 @keyframes swing {
-20% { transform: rotate(15deg); }	
+20% { transform: rotate(15deg); }
 40% { transform: rotate(-10deg); }
-60% { transform: rotate(5deg); }	
-80% { transform: rotate(-5deg); }	
+60% { transform: rotate(5deg); }
+80% { transform: rotate(-5deg); }
 100% { transform: rotate(0deg); }
 }
 .animated.swing {
@@ -218,22 +218,22 @@ animation-name: wobble;
 }
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 @-webkit-keyframes pulse {
-0% { -webkit-transform: scale(1); }	
+0% { -webkit-transform: scale(1); }
 50% { -webkit-transform: scale(1.1); }
 100% { -webkit-transform: scale(1); }
 }
 @-moz-keyframes pulse {
-0% { -moz-transform: scale(1); }	
+0% { -moz-transform: scale(1); }
 50% { -moz-transform: scale(1.1); }
 100% { -moz-transform: scale(1); }
 }
 @-o-keyframes pulse {
-0% { -o-transform: scale(1); }	
+0% { -o-transform: scale(1); }
 50% { -o-transform: scale(1.1); }
 100% { -o-transform: scale(1); }
 }
 @keyframes pulse {
-0% { transform: scale(1); }	
+0% { transform: scale(1); }
 50% { transform: scale(1.1); }
 100% { transform: scale(1); }
 }
@@ -590,19 +590,19 @@ backface-visibility: visible !important;
 animation-name: flipOutY;
 }
 @-webkit-keyframes fadeIn {
-0% {opacity: 0;}	
+0% {opacity: 0;}
 100% {opacity: 1;}
 }
 @-moz-keyframes fadeIn {
-0% {opacity: 0;}	
+0% {opacity: 0;}
 100% {opacity: 1;}
 }
 @-o-keyframes fadeIn {
-0% {opacity: 0;}	
+0% {opacity: 0;}
 100% {opacity: 1;}
 }
 @keyframes fadeIn {
-0% {opacity: 0;}	
+0% {opacity: 0;}
 100% {opacity: 1;}
 }
 .animated.fadeIn {
@@ -1733,7 +1733,7 @@ opacity: 1;
 100% {
 opacity: 0;
 -webkit-transform: scale(.3);
-}	
+}
 }
 @-moz-keyframes bounceOut {
 0% {
@@ -1749,7 +1749,7 @@ opacity: 1;
 100% {
 opacity: 0;
 -moz-transform: scale(.3);
-}	
+}
 }
 @-o-keyframes bounceOut {
 0% {
@@ -1765,7 +1765,7 @@ opacity: 1;
 100% {
 opacity: 0;
 -o-transform: scale(.3);
-}	
+}
 }
 @keyframes bounceOut {
 0% {
@@ -1781,7 +1781,7 @@ transform: scale(1.1);
 100% {
 opacity: 0;
 transform: scale(.3);
-}	
+}
 }
 .animated.bounceOut {
 -webkit-animation-name: bounceOut;
@@ -2562,31 +2562,31 @@ opacity: 0;
 animation-name: rotateOutDownRight;
 }
 @-webkit-keyframes hinge {
-0% { -webkit-transform: rotate(0); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }	
-20%, 60% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }	
-40% { -webkit-transform: rotate(60deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }	
-80% { -webkit-transform: rotate(60deg) translateY(0); opacity: 1; -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }	
+0% { -webkit-transform: rotate(0); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
+20%, 60% { -webkit-transform: rotate(80deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
+40% { -webkit-transform: rotate(60deg); -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
+80% { -webkit-transform: rotate(60deg) translateY(0); opacity: 1; -webkit-transform-origin: top left; -webkit-animation-timing-function: ease-in-out; }
 100% { -webkit-transform: translateY(700px); opacity: 0; }
 }
 @-moz-keyframes hinge {
-0% { -moz-transform: rotate(0); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }	
-20%, 60% { -moz-transform: rotate(80deg); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }	
-40% { -moz-transform: rotate(60deg); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }	
-80% { -moz-transform: rotate(60deg) translateY(0); opacity: 1; -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }	
+0% { -moz-transform: rotate(0); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+20%, 60% { -moz-transform: rotate(80deg); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+40% { -moz-transform: rotate(60deg); -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
+80% { -moz-transform: rotate(60deg) translateY(0); opacity: 1; -moz-transform-origin: top left; -moz-animation-timing-function: ease-in-out; }
 100% { -moz-transform: translateY(700px); opacity: 0; }
 }
 @-o-keyframes hinge {
-0% { -o-transform: rotate(0); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }	
-20%, 60% { -o-transform: rotate(80deg); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }	
-40% { -o-transform: rotate(60deg); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }	
-80% { -o-transform: rotate(60deg) translateY(0); opacity: 1; -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }	
+0% { -o-transform: rotate(0); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+20%, 60% { -o-transform: rotate(80deg); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+40% { -o-transform: rotate(60deg); -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
+80% { -o-transform: rotate(60deg) translateY(0); opacity: 1; -o-transform-origin: top left; -o-animation-timing-function: ease-in-out; }
 100% { -o-transform: translateY(700px); opacity: 0; }
 }
 @keyframes hinge {
-0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }	
-20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }	
-40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; }	
-80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; }	
+0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }
+20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; }
 100% { transform: translateY(700px); opacity: 0; }
 }
 .animated.hinge {

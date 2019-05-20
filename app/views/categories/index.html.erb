@@ -1,0 +1,37 @@
+<%= provide :title, t(".title") %>
+<% content_for :content do %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h1><%= t ".title" %></h1>
+    </div>
+    <span class="btn btn-info"><%= link_to t("label.create"), new_category_path %></span>
+  </div>
+  <h3><%= t ".total_categories" %>: <%= Category.all.size %> </h3>
+  <div class="col-md-8 offset-md-2">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t ".name" %></th>
+          <th colspan="2"><%= t ".control" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+        <tr>
+          <td><%= category.name %></td>
+          <td>
+            <%= link_to t(".edit"),edit_category_path(category), method: :delete, class: "btn btn-danger" %>
+          </td>
+          <td>
+            <%= link_to t(".delete"),category_path(category), class: "btn btn-success" %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <%= will_paginate @category, class: "btn btn-success" %>
+</div>
+<% end %>
+<%= render "users/admin" %>

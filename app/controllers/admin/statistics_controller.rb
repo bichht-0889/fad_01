@@ -13,26 +13,22 @@ class Admin::StatisticsController < ApplicationController
     @orders_bym = Order.group_by_month(:created_at)
     @orders_byd = orders_this_month.group_by_day(:created_at)
     @products = Product.all
-    @stock_take = OrderItem.stock_take_products
-    @stock_take_desc = @stock_take.sort_by(&:last).reverse
-    @stock_take_asc = @stock_take.sort_by(&:last)
+    @stock_take = OrderItem.stock_take
     @stock_price = OrderItem.stock_take_price
-    if params[:first] && params[:last]
-      load_orders_fillter
-    end
+    load_orders_fillter if params[:first] && params[:last]
   end
 
   def load_orders_fillter
-    @fillter = Order.where(:created_at => params[:first]..params[:last])
+    @fillter = Order.where(created_at: params[:first]..params[:last])
     @orders_fillter = @fillter.group_by_day(:created_at)
   end
 
   def users_this_month
-    return User.where(:created_at => @date_end..@date_start)
+    User.where(created_at: @date_end..@date_start)
   end
 
   def orders_this_month
-    return Order.where(:created_at => @date_end..@date_start)
+    Order.where(created_at: @date_end..@date_start)
   end
 
   def load_this_month
@@ -41,6 +37,6 @@ class Admin::StatisticsController < ApplicationController
   end
 
   def bestseller_this_month
-    return OrderItem.stock_take_desc.where(:created_at => @date_end..@date_start)
+    OrderItem.stock_take_desc.where(created_at: @date_end..@date_start)
   end
 end

@@ -37,11 +37,11 @@ Rails.application.configure do
   host = Settings.config.development.host
   config.action_mailer.default_url_options = {host: host, protocol: "http"}
   ActionMailer::Base.smtp_settings = {
-    address: ENV["ADDRESS"],
+    address: "smtp.gmail.com",
     port: Settings.config.development.port,
     authentication: :plain,
-    user_name: ENV["USER_NAME"],
-    password: ENV["PASSWORD"],
+    user_name: "vantri27051998@gmail.com",
+    password: "01268582141",
     enable_starttls_auto: true
   }
 

@@ -18,7 +18,7 @@ class Admin::ProductsController < ApplicationController
 
   def index
     @product = Product.paginate(page: params[:page],
-      per_page: Settings.app.admin.product.per_page)
+      per_page: Settings.app.admin.product.per_page).asc_name
   end
 
   def edit; end

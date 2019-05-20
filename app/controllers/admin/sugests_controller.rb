@@ -1,7 +1,7 @@
 class Admin::SugestsController < ApplicationController
   before_action :check_loggin, :check_role_admin
   before_action :load_sugest, only: %i(update create_category create_product)
-  
+
   def index
     @sugest = Sugest.order_by_created.paginate(page: params[:page],
       per_page: Settings.pages.per_page_ten)
@@ -9,14 +9,14 @@ class Admin::SugestsController < ApplicationController
 
   def new; end
 
-  def show;
-  redirect_to admin_sugests_path
+  def show
+    redirect_to admin_sugests_path
   end
 
   def create
     create_product
   end
-  
+
   def update
     if params[:status] == Settings.label.accept
       case @sugest.status
@@ -56,11 +56,11 @@ class Admin::SugestsController < ApplicationController
       flash[:info] = t "controllers.admin.sugests.err"
       redirect_to admin_sugests_path
     end
-    rescue NoMethodError => e
-      flash[:danger] = t "controllers.admin.sugests.bug_update", name: e.message
+  rescue NoMethodError => e
+    flash[:danger] = t "controllers.admin.sugests.bug_update", name: e.message
     redirect_to admin_sugests_path
   end
-  
+
   private
 
   def accept
@@ -73,7 +73,7 @@ class Admin::SugestsController < ApplicationController
     flash[:info] = t "controllers.admin.sugests.refuse_success"
     redirect_to admin_sugests_path
   end
-  
+
   def load_sugests
     @sugests = Sugest.all
     return if @sugests
@@ -102,7 +102,7 @@ class Admin::SugestsController < ApplicationController
     if @category.save
       @sugest.default_create!
       flash[:success] = t "controllers.admin.sugest.cate_success"
-      
+
     else
       return render :category
     end
@@ -110,11 +110,11 @@ class Admin::SugestsController < ApplicationController
 
   def create_product
     @product = Product.new params_product
-      if @product.save
-        flash[:success] = t "controllers.product.success"
-        redirect_to admin_sugests_path
-      else
-        return render :new
-      end
+    if @product.save
+      flash[:success] = t "controllers.product.success"
+      redirect_to admin_sugests_path
+    else
+      return render :new
+    end
   end
 end
