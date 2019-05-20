@@ -8,7 +8,7 @@
           <h4 class="panel-title"><%= link_to t("label.all"), products_path %></h4>
         </div>
       </div>
-      <% @categories.each do |category|%>
+      <% load_categories.each do |category|%>
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">

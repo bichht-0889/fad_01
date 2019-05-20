@@ -33,6 +33,10 @@ en:
     logout: "Log out"
     add_cart: "Add to cart"
     all_items: "Hot Items"
+    submit: "Submit"
+    rating: "Rating: "
+  title:
+    detail: "Detail"
   footer:
     copyright: "Copyright © 2019 Foods & Drinks. All rights reserved."
     text1: "Get the most recent updates from
@@ -126,6 +130,8 @@ en:
     product_not_found: "Product not found"
     index:
       title: "Home"
+    write_cmt: "Write Your Review"
+    err_cmt: "Error"
   helpers:
     session:
       bug_create_order: "Bug create order!"

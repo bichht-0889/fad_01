@@ -7,4 +7,8 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def load_categories
+    @categories = Category.all
+  end
 end
