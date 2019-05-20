@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   end
   resources :carts, only: [:index, :show, :update]
   resources :order_items, only: %i(create update destroy)
+  resources :comments
   resources :order_items do
     get "decrease", on: :member
     get "increase", on: :member

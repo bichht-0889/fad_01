@@ -107,9 +107,15 @@
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="search_box pull-right">
+          <!-- <div class="search_box pull-right">
             <input type="text" placeholder="Search" />
+          </div> -->
+          <%= form_tag products_path, method: :get, class: "", role: :search do %>
+          <div class="search_box pull-right">
+            <%= text_field_tag :search_by_name, ""%>
+            <%= submit_tag t("label.search"), id: "btnSearch" %>
           </div>
+          <% end %>
         </div>
       </div>
     </div>
