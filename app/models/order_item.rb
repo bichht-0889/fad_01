@@ -5,6 +5,7 @@ class OrderItem < ApplicationRecord
     numericality: {only_integer: true, greater_than: 0}
   validate :product_present
   validate :order_present
+  delegate :name, to: :product, prefix: :product
 
   def subtotal
     quantity * price

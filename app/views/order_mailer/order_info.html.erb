@@ -1,0 +1,32 @@
+<h2><%= t ".hi", name: @order.user.name %></h2>
+<h4><i><%= t ".status" %>: <%= @order.status %></i></h4>
+<hr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t ".name" %></th>
+      <th><%= t ".quantity" %></th>
+      <th><%= t ".subtotal" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.order_items.each do |ot| %>
+    <tr>
+      <td><%= ot.product.name %></td>
+      <td><%= ot.quantity %></td>
+      <td><%= number_to_currency ot.subtotal %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan="3">
+        <b><%= t ".total_price"%>: </b>
+        <span><%= number_to_currency @order.total_price %></span>
+        <p>
+          <p><%= link_to t(".info_order"), cart_url(@order), data: { confirm: I18n.t("evaluators.alert.confirm_cancel")}, class: "btn btn-primary" %></p>
+          <b><%= t ".time" %>: <i><%= l @order.updated_at %></i></b>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<b><i><%= t ".thanks" %></i></b>

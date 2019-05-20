@@ -26,7 +26,7 @@ class Admin::SugestsController < ApplicationController
         return render :new
       when Settings.label.new_cate
         flash[:info] = t "controllers.admin.sugests.cate_fisrt",
-          name: @sugest.new_cate
+          name: @sugest.new_category
       when Settings.label.accept
         flash[:info] = t "controllers.admin.sugests.sug_done"
       when Settings.label.refuse

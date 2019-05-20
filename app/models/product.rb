@@ -15,6 +15,7 @@ class Product < ApplicationRecord
   validates :category_id, presence: true
   scope :get_category_id, ->(category_id){product category_id}
   scope :asc_name, ->{order name: :asc}
+  mount_uploader :picture, PictureUploader
   def self.product category_id
     (where category_id: category_id) if category_id.present?
   end

@@ -52,36 +52,6 @@ Category.create!(name: "Drinks", status: 1)
   description = Faker::Lorem.sentence
   picture = nil
   avg_rating = 0
-
-  Product.create!(
-    category_id: category_id,
-    name: name,
-    price: price,
-    quantity: quantity,
-    description: description,
-    avg_rating: avg_rating,
-    picture: picture
-  )
-end
-
-25.times do |n|
-  category_id = 1
-  name = "Foods#{n+1}"
-  price = 200
-  quantity = 10
-  description = "Ngon, bổ, rẻ"
-  picture = "https://i.ibb.co/BZtH15r/banhmi.jpg"
-  avg_rating = 4.3
-
-  Product.create!(
-    category_id: category_id,
-    name: name,
-    price: price,
-    quantity: quantity,
-    description: description,
-    avg_rating: avg_rating,
-    picture: picture
-  )
 end
 
 25.times do |n|
