@@ -18,7 +18,8 @@ class OrderItem < ApplicationRecord
 
   def order_present
     errors.add(:order, t("models.order_item.order_nil")) if order.nil?
-
+  end
+  
   scope :trend_items, -> do
     group(:product_id)
     .order("SUM(quantity) DESC")

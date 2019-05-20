@@ -1229,7 +1229,7 @@ h2.title {
 .product-information h2 {
   color: #363432;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 35px;
   margin-top: 0;
 }
 
@@ -1237,6 +1237,7 @@ h2.title {
   color: #696763;
   font-family: 'Roboto', sans-serif;
   margin-bottom: 5px;
+  display: contents;
 }
 
 .product-information span {
@@ -1277,18 +1278,16 @@ h2.title {
   margin-top: 15px;
 }
 
-
 .cart {
   background: #FE980F;
   border: 0 none;
   border-radius: 0;
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
-  font-size: 15px;
+  font-size: 25px;
   margin-bottom: 10px;
-  margin-left: 20px;
+  margin: 50px 0px 10px 50px;
 }
-
 
 .shop-details-tab {
   border: 1px solid #F7F7F0;
@@ -1301,7 +1300,6 @@ h2.title {
 	padding-left: 0;
 	padding-right: 0;
 }
-
 
 #reviews ul {
   background: #FFFFFF;
@@ -1378,7 +1376,6 @@ h2.title {
   font-size: 14px;
 }
 
-
 /*************************
 *******404 CSS******
 **************************/
@@ -1417,7 +1414,6 @@ h2.title {
   padding: 8px 40px;
 }
 
-
 /*************************
 *******login page CSS******
 **************************/
@@ -1429,14 +1425,6 @@ h2.title {
   overflow: hidden;
 }
 
-.login-form {
-
-}
-
-.signup-form {
-
-}
-
 .login-form h2, .signup-form h2 {
   color: #696763;
   font-family: 'Roboto', sans-serif;
@@ -1444,7 +1432,6 @@ h2.title {
   font-weight: 300;
   margin-bottom: 30px;
 }
-
 
 .login-form form input, .signup-form form input {
   background: #F0F0E9;
@@ -1487,11 +1474,6 @@ h2.title {
   width: -webkit-fill-available;
 }
 
-.login-form label{
-
-}
-
-
 .login-form label input {
   border: medium none;
   display: inline-block;
@@ -1500,7 +1482,6 @@ h2.title {
   outline: medium none;
   padding-left: 0;
 }
-
 
 .or{
 	background: #FE980F;
@@ -1514,7 +1495,6 @@ h2.title {
 	text-align: center;
 	width: 50px;
 }
-
 
 /*************************
 *******Cart CSS******
@@ -1550,7 +1530,6 @@ h2.title {
   position: absolute;
   top: 11px;
   left:48px;
-
 }
 
 .breadcrumbs .breadcrumb > li + li:before {
@@ -1589,11 +1568,9 @@ h2.title {
   vertical-align: inherit;
 }
 
-
 #cart_items .cart_info .image {
   padding-left: 30px;
 }
-
 
 #cart_items .cart_info .cart_description h4 {
   margin-bottom: 0
@@ -1604,19 +1581,16 @@ h2.title {
   font-family: 'Roboto',sans-serif;
   font-size: 20px;
   font-weight: normal;
-
 }
 
 #cart_items .cart_info .cart_description p {
   color:#696763
 }
 
-
 #cart_items .cart_info .cart_price p {
   color:#696763;
   font-size: 18px
 }
-
 
 #cart_items .cart_info .cart_total_price {
   color: #FE980F;
@@ -1640,7 +1614,6 @@ h2.title {
   float: left;
 }
 
-
 .cart_quantity_input {
   color: #696763;
   float: left;
@@ -1649,13 +1622,11 @@ h2.title {
   font-family: 'Roboto',sans-serif;
 }
 
-
 .cart_delete  {
   display: block;
   margin-right: -12px;
   overflow: hidden;
 }
-
 
 .cart_delete a {
   background:#F0F0E9;
@@ -1667,7 +1638,6 @@ h2.title {
 .cart_delete a:hover {
   background:#FE980F
 }
-
 
 .bg h2.title {
   margin-right:0;
@@ -1686,7 +1656,6 @@ h2.title {
   font-size: 16px;
   font-weight: 300;
 }
-
 
 #do_action .total_area {
   padding-bottom: 18px !important;
@@ -1710,13 +1679,11 @@ h2.title {
   padding: 7px 20px;
 }
 
-
 .user_option label {
   color: #696763;
   font-weight: normal;
   margin-left: 10px;
 }
-
 
 .user_info {
   display: block;
@@ -1747,9 +1714,6 @@ h2.title {
   margin-right: 10px
 }
 
-.user_info > li > span {
-}
-
 .user_info input, select, textarea {
   background: #F0F0E9;
   border:0;
@@ -1763,7 +1727,6 @@ h2.title {
 .user_info select:focus {
   border: 0
 }
-
 
 .chose_area .update {
   margin-left: 40px;
@@ -1785,8 +1748,6 @@ h2.title {
   margin-left: 20px
 }
 
-
-
 /*************************
 *******checkout CSS******
 **************************/
@@ -1807,7 +1768,6 @@ h2.title {
 .checkout-options {
   padding-left: 20px
 }
-
 
 .checkout-options h3 {
   color: #363432;
@@ -1857,7 +1817,6 @@ h2.title {
   padding: 2px 3px;
 }
 
-
 .register-req  {
   font-size: 14px;
   font-weight: 300;
@@ -1870,8 +1829,6 @@ h2.title {
   margin-bottom: 0
 }
 
-
-
 .shopper-info p,
 .bill-to p,
 .order-message p {
@@ -1879,7 +1836,6 @@ h2.title {
   font-size: 20px;
   font-weight: 300
 }
-
 
 .shopper-info .btn-primary {
   background: #FE980F;
@@ -1889,12 +1845,10 @@ h2.title {
   margin-top: 20px;
 }
 
-
 .form-two, .form-one {
   float: left;
   width: 47%
 }
-
 
 .shopper-info > form > input,
 .form-two > form > select,
@@ -1916,7 +1870,6 @@ h2.title {
   margin-left: 5%
 }
 
-
 .order-message textarea {
   font-size: 12px;
   height: 335px;
@@ -1931,7 +1884,6 @@ h2.title {
   margin-left: 10px;
   font-size: 14px
 }
-
 
 .review-payment h2 {
   color: #696763;
@@ -1979,13 +1931,9 @@ h2.title {
 }
 
 
-
-
 /*************************
 *******Blog CSS******
 **************************/
-
-
 
 .blog-post-area
 .single-blog-post h3 {
@@ -1995,9 +1943,6 @@ h2.title {
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: 17px;
-}
-
-.single-blog-post > a {
 }
 
 .blog-post-area
@@ -2084,7 +2029,6 @@ h2.title {
   margin-top: 17px;
 }
 
-
 .pagination-area {
   margin-bottom:45px;
   margin-top:45px
@@ -2107,8 +2051,6 @@ h2.title {
   background:#FE980F;
   color: #fff
 }
-
-
 
 /*************************
 *******Blog Single CSS******
@@ -2154,7 +2096,6 @@ h2.title {
   margin-bottom: 0
 }
 
-
 .rating-area
 .ratings li i {
   color:#CCCCCC
@@ -2173,7 +2114,6 @@ h2.title {
   color: #FE980F
 }
 
-
 .rating-area .tag {
   float: right;
   margin-bottom: 0;
@@ -2187,12 +2127,10 @@ h2.title {
   color: #363432;
 }
 
-
 .socials-share {
   margin-bottom: 30px;
   margin-top: 18px;
 }
-
 
 .commnets
 .media-object {
@@ -2247,7 +2185,6 @@ h2.title {
   width: 17px;
 }
 
-
 .blog-socials ul li a {
   color: #393B3B;
   display: block;
@@ -2260,7 +2197,6 @@ h2.title {
   color: #fff;
   background:#FE980F
 }
-
 
 .media-list .btn-primary,
 .commnets .btn-primary {
@@ -2300,14 +2236,11 @@ h2.title {
   width: 95%;
 }
 
-
 .sinlge-post-meta {
   overflow: hidden;
   padding-left: 0;
   margin-bottom: 15px
 }
-
-
 
 .sinlge-post-meta li {
   background:#F0F0E9;

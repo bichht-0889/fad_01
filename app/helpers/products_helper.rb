@@ -29,4 +29,11 @@ module ProductsHelper
   def load_new_product
     Product.load_product_by_created.limit(Settings.products.news)
   end
+
+  def load_product
+    @product = Product.find_by id: params[:id]
+    return if @product
+    flash[:danger] = t "products.product_not_found"
+    redirect_to products_path
+  end
 end
