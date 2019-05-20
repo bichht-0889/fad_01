@@ -28,6 +28,7 @@ en:
     sign_in: "Sign up"
     setting: "Setting"
     logout: "Log out"
+    add_cart: "Add to cart"
   footer:
     copyright: "Copyright © 2019 Foods & Drinks. All rights reserved."
     text1: "Get the most recent updates from
@@ -102,3 +103,7 @@ en:
       account_activation: "Account activation"
   uploaders:
     img: "user.jpg"
+
+  products:
+    alt_img: "Foods"
+    product_not_found: "Product not found"

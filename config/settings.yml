@@ -15,3 +15,5 @@ config:
   development:
     port: "587"
     host: "localhost:3000"
+pages:
+  per_page9: 9
