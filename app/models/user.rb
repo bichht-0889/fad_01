@@ -26,8 +26,9 @@ class User < ApplicationRecord
              allow_nil: true
   mount_uploader :picture, PictureUploader
   validate :picture_size
-  enum role: {member: 0, admin: 1}
-
+  enum role: {member: 0, admin: 1, block: 2}
+  scope :asc_name, ->{order name: :asc}
+  scope :block_user, ->{where.not role: :block}
   def picture_size
     return unless picture.size > Settings.app.user.size.megabytes
     errors.add :picture, t("models.user.bug_size"),

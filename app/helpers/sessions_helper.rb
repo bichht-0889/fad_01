@@ -8,6 +8,7 @@ module SessionsHelper
   end
 
   def current_user? user
+    return true if current_user.admin?
     user == current_user
   end
 
@@ -69,5 +70,17 @@ module SessionsHelper
     return if logged_in?
     flash[:danger] = t "controllers.user.not_login"
     redirect_to login_path
+  end
+
+  def admin_user
+    if logged_in?
+      unless current_user.admin?
+        flash[:danger] = t "helpers.session.not_admin"
+        redirect_to root_path
+      end
+    else
+      flash[:info] = t "helpers.session.not_logged_in"
+      redirect_to login_path
+    end
   end
 end

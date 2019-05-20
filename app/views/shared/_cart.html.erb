@@ -47,7 +47,6 @@
                 <div class="cart_quantity_button">
                   <%= link_to "+", increase_order_item_path(order),
                     class: "cart_quantity_up",  remote: true %>
-
                 <%= form_for order do |f|%>
                   <span>
                     <%= render "shared/error_messages", object: f.object %>
