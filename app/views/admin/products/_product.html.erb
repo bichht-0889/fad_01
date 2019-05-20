@@ -1,6 +1,6 @@
 <tr>
   <td  class="admin_product_images">
-    <%= image_tag product.picture %>
+    <%= image_tag product.picture.url.to_s %>
   </td>
   <td><%= link_to product.name, product_path(product) %></td>
   <td><%= number_to_currency product.price %></td>

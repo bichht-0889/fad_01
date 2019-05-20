@@ -1,0 +1,49 @@
+<div class="container">
+  <div>
+    <span class="btn btn-default"><%= @order.status %></span>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= t ".name" %></th>
+        <th><%= t ".quantity" %></th>
+        <th><%= t ".subtotal" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.order_items.each do |ot| %>
+      <tr>
+        <td><%= ot.product_name %></td>
+        <td><%= ot.quantity %></td>
+        <td><%= number_to_currency ot.subtotal %></td>
+      </tr>
+      <% end %>
+      <tr>
+        <td colspan="3">
+          <b><%= t ".total_price"%>: </b>
+          <span><%= number_to_currency @order.total_price %></span>
+          <p>
+            <% if @order.confirm? %>
+              <span class="btn btn-primary">
+                <%= link_to t(".cancel"), history_order_path(@order), method: :put, data: { confirm: I18n.t("alert.confirm_cancel")}%>
+              </span>
+            <% else %>
+              <b><%= t ".time" %>: <i><%= l @order.updated_at %></i></b>
+            <% end %>
+          </p>
+          <p>
+            <% if current_user.admin? %>
+              <% if @order.confirm? %>
+                <span class="btn btn-success" >
+                  <%= link_to t(".accept"), admin_order_path(@order, status: :accept), method: :put, data: {confirm: I18n.t("alert.confirm_cancel")} %>
+                </span>
+                <span class="btn btn-danger"><%= link_to t(".refuse"), admin_order_path(@order, status: :refuse), method: :put, data: {confirm: I18n.t("alert.confirm_cancel")} %>
+                </span>
+              <% end %>
+            <% end %>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -2,7 +2,7 @@
   <div class="product-image-wrapper">
     <div class="single-products">
       <div class="productinfo text-center">
-        <%= link_to image_tag(product.picture), product,class: "pic-1", alt: t("products.alt_img") %>
+        <%= link_to image_tag(product.picture.url.to_s), product,class: "pic-1", alt: t("products.alt_img") %>
         <h2><%= number_to_currency product.price %></h2>
         <p><h2><%= product.name %></h2></p>
         <% if logged_in? %>

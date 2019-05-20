@@ -51,4 +51,12 @@ class Order < ApplicationRecord
       order_item.valid? ? sum + (order_item.quantity * order_item.price) : 0
     end
   end
+
+  def order_mail_confirm
+    OrderMailer.order_confirm(self).deliver_now
+  end
+
+  def order_mail_user
+    OrderMailer.order_info(self).deliver_now
+  end
 end

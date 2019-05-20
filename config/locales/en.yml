@@ -38,11 +38,12 @@ en:
     setting: "Setting"
     profile: "Profile"
     history_order: "History order"
+    manage_user: "Manage Users"
+    manage_order: "Manage Orders"
+    statis: "Statistical"
   title_1:
     detail: "Detail"
     admin: "Admin"
-    manage_user: "Manage Users"
-    manage_order: "Manage Orders"
   footer:
     copyright: "Copyright © 2019 Foods & Drinks. All rights reserved."
     text1: "Get the most recent updates from
@@ -81,6 +82,7 @@ en:
       product_not_found: "Product not found!"
     cart:
       order_not_exists: "Order not exists!"
+      bug_checkout: "Confirm order failure!"
     checkout:
       order_not_exists: "Order not exists!"
     history_order:
@@ -176,6 +178,9 @@ en:
     user:
       account_activation: "Account activation"
       statistical: "Statistical"
+    order:
+      order_confirm: "Confirm order"
+      order_info: "Info order"
   uploaders:
     img: "user.jpg"
 
@@ -194,6 +199,8 @@ en:
   carts:
     index:
       title: "Shop cart"
+    show:
+      total_price: "Total Price"
   shared:
     cart:
       home: "Home"
@@ -235,11 +242,10 @@ en:
       no_accept: "Order accept No transaction history!!"
       no_refuse: "Order refuse No transaction history!!"
       no_finish: "Order finish No transaction history!!"
-  evaluators:
-    alert:
-      bug: "not valid."
-      confirm_delete: "Are you sure?"
-      confirm_cancel: "Are you cancel?"
+  alert:
+    bug: "not valid."
+    confirm_delete: "Are you sure?"
+    confirm_cancel: "Are you cancel?"
   admin:
     users:
       index:
@@ -297,4 +303,24 @@ en:
       edit:
         title: "Upade Product"
         button: "Save"
-
+  order_mailer:
+    order_confirm:
+      name: "Name"
+      quantity: "Quantity"
+      subtotal: "SubTotal"
+      status: "Status"
+      cancel: "Cancel"
+      are_you_sure: "Are you Sure?"
+      accept: "Accept"
+      refuse: "Refuse"
+      member: "Member"
+    order_info:
+      hi: "Hi %{name}"
+      thanks: "Thank you for buying"
+      name: "Name"
+      quantity: "Quantity"
+      subtotal: "SubTotal"
+      status: "Status"
+      cancel: "Cancel"
+      info_order: "Information Order"
+      total_price: "Total Price"

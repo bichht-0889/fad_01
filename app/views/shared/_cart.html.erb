@@ -31,7 +31,7 @@
             <tr>
               <td class="cart_product">
                <%= link_to do %>
-                <%= image_tag order.product.picture, class: "cart_image" %>
+                <%= image_tag order.product.picture.url.to_s, class: "cart_image" %>
                <% end %>
               </td>
 
