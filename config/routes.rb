@@ -22,5 +22,6 @@ Rails.application.routes.draw do
     resources :orders
     resources :users
     resources :statistics
+    resources :products
   end
 end

@@ -29,6 +29,8 @@ app:
       accept: "accept"
       refuse: "refuse"
       per_page: 5
+    product:
+      per_page: 10
 config:
   development:
     port: "587"
