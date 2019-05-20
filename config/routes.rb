@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   end
   resources :checkouts, onlyl: :index
   resources :history_orders
+  namespace :admin do
+    resources :orders
+  end
 end

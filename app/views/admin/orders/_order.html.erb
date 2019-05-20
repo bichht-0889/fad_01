@@ -1,0 +1,37 @@
+ <table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t ".name" %></th>
+      <th><%= t ".quantity" %></th>
+      <th><%= t ".subtotal" %></th>
+      <th><%= t ".status" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% order.order_items.each do |ot| %>
+    <tr>
+      <td><%= ot.product.name %></td>
+      <td><%= ot.quantity %></td>
+      <td><%= ot.subtotal %></td>
+      <td><%= order.status %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td colspan="3">
+        <b><%= t ".member" %>: <i><%= order.user_name %></i> -- </b>
+        <b>Total price: </b>
+        <span><%= number_to_currency(order.total_price) %></span><br>
+        <b><%= t ".time" %>: <i><%= l order.updated_at %></i></b>
+        <p>
+          <% if order.confirm? %>
+            <span><%= link_to t(".accept"), admin_order_path(order, status: :accept),
+               method: :put, data: {confirm: I18n.t("evaluators.alert.confirm_cancel")}, class: "btn btn-success" %>
+            </span>
+            <span><%= link_to t(".refuse"), admin_order_path(order, status: :refuse), method: :put, data: {confirm: I18n.t("evaluators.alert.confirm_cancel")}, class: "btn btn-danger" %>
+            </span>
+          <% end %>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>

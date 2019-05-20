@@ -35,8 +35,11 @@ en:
     all_items: "Hot Items"
     submit: "Submit"
     rating: "Rating: "
-  title:
+  title_1:
     detail: "Detail"
+    admin: "Admin"
+    manage_user: "Manage Users"
+    manage_order: "Manage Orders"
   footer:
     copyright: "Copyright © 2019 Foods & Drinks. All rights reserved."
     text1: "Get the most recent updates from
@@ -79,6 +82,17 @@ en:
       order_not_exists: "Order not exists!"
     history_order:
       not_found_order: "Order not found!"
+    admin:
+      user:
+        not_found: "User not found!"
+        success: "successfully!"
+        danger: "bug in delete!"
+      order:
+        not_found_order: "Order not found!"
+        accept_success: "Order Aceepted!"
+        refuse_success: "Order Refused!"
+        bug_update: "Bug update: %{name}!"
+        not_found_status: "Access bug!"
   users:
     new:
       title: "Sign up"
@@ -135,6 +149,8 @@ en:
   helpers:
     session:
       bug_create_order: "Bug create order!"
+      not_logged_in: "You must loggin!"
+      not_admin: "You not have access!"
   carts:
     index:
       title: "Shop cart"
@@ -162,6 +178,9 @@ en:
       status: "Status"
       cancel: "Cancel"
       are_you_sure: "Are you Sure?"
+      accept: "Accept"
+      refuse: "Refuse"
+      member: "Member"
   history_orders:
     index:
       confirm: "Confirm"
@@ -179,3 +198,32 @@ en:
       bug: "not valid."
       confirm_delete: "Are you sure?"
       confirm_cancel: "Are you cancel?"
+  admin:
+    users:
+      index:
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        total_order: "Total Order"
+        control: "Control"
+        delete: "Delete"
+        edit: "Edit"
+        total_user: "Total User"
+        image: "Avatar"
+      edit:
+        title: "Admin update"
+    orders:
+      index:
+        confirm: "Confirm"
+        cancel: "Cancel"
+        accept: "Accept"
+        refuse: "Refuse"
+        finish: "Finish"
+        no_order: "Order No transaction history!!"
+        no_cancel: "Order cancel No transaction history!!"
+        no_accept: "Order accept No transaction history!!"
+        no_refuse: "Order refuse No transaction history!!"
+        no_finish: "Order finish No transaction history!!"
+        title: "Admin Order"
+        total: "Total"
+        search: "Search"

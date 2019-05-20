@@ -53,7 +53,16 @@ module SessionsHelper
   end
 
   def check_loggin
-    redirect_to login_path unless logged_in?
+    return if logged_in?
+    store_location
+    flash[:info] = t "helpers.session.not_logged_in"
+    redirect_to login_path
+  end
+
+  def check_role_admin
+    return if current_user.admin?
+    flash[:danger] = t "helpers.session.not_admin"
+    redirect_to root_path
   end
 
   def logged_in_user

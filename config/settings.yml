@@ -15,6 +15,11 @@ app:
   mailers:
     application:
       email: "vantri27051998@gmail.com"
+  admin:
+    users:
+      per_page: 10
+    orders:
+      per_page: 2
 config:
   development:
     port: "587"

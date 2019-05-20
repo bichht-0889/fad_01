@@ -9,3 +9,8 @@ $(function () {
     maxValue: 5
   })
 });
+
+$(document).ready(function() {
+   $('.change_quantity').onchange(function(event){
+     this.form.submit();
+  });
