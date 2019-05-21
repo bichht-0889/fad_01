@@ -7,7 +7,13 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.paths << Emoji.images_path
 # Add Yarn node_modules folder to the asset load path.
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
-
+Rails.application.config.assets.precompile += %w( contact.js )
+Rails.application.config.assets.precompile += %w( gmaps.js )
+Rails.application.config.assets.precompile += %w( html5shiv.js )
+Rails.application.config.assets.precompile += %w( jquery.prettyPhoto.js )
+Rails.application.config.assets.precompile += %w( jquery.scrollUp.min.js )
+Rails.application.config.assets.precompile += %w( main.js )
+Rails.application.config.assets.precompile += %w( price-range.js )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.

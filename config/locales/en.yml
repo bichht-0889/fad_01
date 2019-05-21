@@ -6,3 +6,38 @@ en:
   models:
     user:
       bug_size: "size picture not less than %{size}MB"
+  web_info:
+    phone: " +2 95 01 88 821"
+    email: " info@domain.com"
+    address: " Address: 16 Ly Thuong Kiet street"
+  label:
+    account: "Account"
+    cart: "Cart"
+    login: "Login"
+    home: "Home"
+    categorie: "Categories"
+    foods: "Foods"
+    drinks: "Drinks"
+    blog: "Blog"
+    contact: "Contact"
+    toggle_navi: "Toggle navigation"
+    recommend_item: "recommended items"
+    all: "All"
+    new_item: "New products"
+    items: "Items"
+  footer:
+    copyright: "Copyright © 2019 Foods & Drinks. All rights reserved."
+    text1: "Get the most recent updates from 
+            our site and be updated your self..."
+    about: "About Foods & Drinks shop"
+    info: "Shop information"
+    carres: "Careers"
+    location: "Store Location"
+    terms: "Terms of Use"
+    privecy: "Privecy Policy"
+    refund: "Refund Policy"
+    help: "Online Help"
+    contact: "Contact Us"
+    order: "Order Status"
+    service: "Service"
+    policies: "Policies"
