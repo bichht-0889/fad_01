@@ -1,0 +1,40 @@
+<div class="col-sm-3">
+  <div class="left-sidebar">
+    <h2><%= t("label.categorie") %></h2>
+    <div class="panel-group category-products" id="accordian">
+      <!--category-productsr-->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title"><%= link_to t("label.all"), products_path %></h4>
+        </div>
+      </div>
+      <% @categories.each do |category|%>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title"><%= link_to category.name, products_path(get_category_id: category.id)%></h4>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <!--/category-products-->
+
+    <div class="brands_products">
+      <!--brands_products-->
+      <h2><%= t("label.new_item") %></h2>
+      <div class="brands-name">
+        <ul class="nav nav-pills nav-stacked">
+          <% @categories.each do |category|%>
+          <li>
+            <div class="shipping text-center">
+              <!--shipping-->
+              <%= image_tag("food1.jpg", :alt => "food", :class => "girl img-responsive", size: "80x80") %>
+            </div>
+            <!--/shipping-->
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <!--/brands_products-->
+  </div>
+</div>

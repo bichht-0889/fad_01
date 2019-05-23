@@ -24,6 +24,7 @@ gem "uglifier", ">= 1.3.0"
 gem "font-awesome-rails"
 gem "font-awesome-sass"
 gem "jquery-rails", "~> 4.3", ">= 4.3.3"
+gem "will_paginate"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

@@ -44,7 +44,11 @@
 }
 .signup-form{
   color: $state-danger-text;
+}
 
+.pagination a, em{
+  padding: 15px;
+  border: 1px solid;
 }
 
 //list info

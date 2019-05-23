@@ -1,3 +1,8 @@
 class StaticPagesController < ApplicationController
-  def home; end
+  include ProductsHelper
+  before_action :load_filter, only: :home
+  
+  def home
+    load_products
+  end
 end
