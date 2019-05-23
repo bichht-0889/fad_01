@@ -25,9 +25,12 @@ en:
     all: "All"
     new_item: "New products"
     items: "Items"
+    sign_in: "Sign up"
+    setting: "Setting"
+    logout: "Log out"
   footer:
     copyright: "Copyright © 2019 Foods & Drinks. All rights reserved."
-    text1: "Get the most recent updates from 
+    text1: "Get the most recent updates from
             our site and be updated your self..."
     about: "About Foods & Drinks shop"
     info: "Shop information"
@@ -45,9 +48,15 @@ en:
     user:
       sign_up_success: "Acount %{name} created date: %{date}. Please check
                         your email to activate your account."
+      id_not_found: "Your id not foud!"
+      update_success: "Your update successfully!"
+      not_login: "Your must login!"
     account_activation:
       activate_success: "Account activated!"
       activate_danger: "Invalid activation link"
+    session:
+      account_not_activated: "Acount must activate!"
+      email_pass_bug: "Email/password not found!"
   users:
     new:
       title: "Sign up"
@@ -59,6 +68,28 @@ en:
       phone: "Phone number"
       address: "Address"
       img_user: "user.jpg"
+    edit:
+      title: "Update Profile"
+    form:
+      img_user: "user.jpg"
+      title: "Sign up"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      pass_confirm: "Confirmation"
+      phone: "Phone number"
+      address: "Address"
+      img_user: "user.jpg"
+    show:
+      title: "%{name}"
+  sessions:
+    new:
+      title: "Sign in"
+      email: "Email"
+      password: "Password"
+      new_user: "Create user"
+      link_signup: "Sign up"
+      title_signin: "Login to your account"
   user_mailer:
     account_activation:
       title: "Food && Drink"
@@ -69,4 +100,5 @@ en:
   mailers:
     user:
       account_activation: "Account activation"
-
+  uploaders:
+    img: "user.jpg"
