@@ -5,10 +5,18 @@
         <%= link_to image_tag(product.picture), product,class: "pic-1", alt: t("products.alt_img") %>
         <h2><%= number_to_currency product.price %></h2>
         <p><h2><%= product.name %></h2></p>
-        <a href="#" class="btn btn-default add-to-cart">
-          <i class="fa fa-shopping-cart"></i>
-          <%= t("label.add_cart") %>
-        </a>
+        <% if logged_in? %>
+          <%= form_for @order_item, remote: true do |f| %>
+            <%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.hidden_field :price, value: product.price %>
+            <%= f.button :submit, class: "btn btn-default add-to-cart" do %>
+              <i class="fa fa-shopping-cart"></i> <%= t("label.add_cart") %>
+            <% end %>
+          <% end %>
+        <% else %>
+          <a href="/login" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i> <%= t("label.add_cart") %></a>
+        <% end %>
       </div>
     </div>
   </div>

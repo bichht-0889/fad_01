@@ -1,0 +1,104 @@
+<section id="cart_items">
+  <div class="container">
+    <div class="breadcrumbs">
+      <ol class="breadcrumb">
+        <li><a href="#"><%= t ".home" %></a></li>
+        <li class="active"><%= t ".shoping_cart" %></li>
+      </ol>
+    </div>
+    <div class="table-responsive cart_info">
+      <table class="table table-condensed">
+        <thead>
+          <tr class="cart_menu">
+            <td class="image"><%= t ".item" %></td>
+            <td class="description"><%= t ".name" %></td>
+            <td class="price"><%= t ".price" %></td>
+            <td class="quantity"><%= t ".quantity" %></td>
+            <td class="total"><%= t "total" %></td>
+            <td></td>
+          </tr>
+        </thead>
+
+        <tbody >
+        <% if @order_items.blank? %>
+          <tr>
+            <td colspan="4">
+              <%=  link_to "continue buy product", root_path, class: "btn btn-primary" %>
+            </td>
+          </tr>
+        <% else %>
+          <% @order_items.each do |order| %>
+            <tr>
+              <td class="cart_product">
+               <%= link_to do %>
+                <%= image_tag order.product.picture, class: "cart_image" %>
+               <% end %>
+              </td>
+
+              <td class="cart_description">
+                <h4><a href=""><%= order.product.name %></a></h4>
+              </td>
+
+              <td class="cart_price">
+                <p>$<%= order.price %></p>
+              </td>
+
+              <td class="cart_quantity">
+                <div class="cart_quantity_button">
+                  <%= link_to "+", increase_order_item_path(order),
+                    class: "cart_quantity_up",  remote: true %>
+
+                  <%= form_for order do |f| %>
+                    <span>
+                      <%= render "shared/error_messages", object: f.object %>
+                    </span>
+                  <%= f.text_field :quantity,
+                    class: "cart_quantity_input",size: "2" %>
+                  <% end %>
+
+                  <%= link_to "-", decrease_order_item_path(order),
+                    class: "cart_quantity_dow",  remote: true %>
+                </div>
+                <div class="col-md-12">
+                  <i id="note-<%= order.id %>"></i>
+                </div>
+              </td>
+
+              <td class="cart_total">
+                <p class="cart_total_price">$<%= order.subtotal %></p>
+              </td>
+
+              <td class="cart_delete">
+                <%= link_to order_item_path(order), method: :delete,
+                  data: {confirm: I18n.t("evaluators.alert.confirm_delete")}, class: "cart_quantity_delete" do %>
+                  <i class="fa fa-times"></i>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% end %>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</section> <!--/#cart_items-->
+
+<section id="do_action">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="total_area">
+          <ul>
+            <li><%= t ".cart_sub" %><span>$<span id="total"><%= current_order.total_price %></span></span></li>
+            <li><%= t ".eco_tax" %> <span>No</span></li>
+            <li><%= t ".shoping_cart" %><span>Free</span></li>
+            <li><%= t ".total" %><span>$<span id="total"><%= current_order.total_price %></span></span></li>
+          </ul>
+            <%= link_to t(".history"), history_orders_path, class: "btn btn-default update" %>
+            <%= link_to t(".checkout"), cart_path(current_order), method: :put, class: "btn btn-default check_out" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!--/#do_action -->

@@ -5,6 +5,10 @@ app:
     password_min_length: 6
     phone_max_length: 10
     size: 5
+  order_items:
+    plus: 1
+  order:
+    plus: 1
   uploaders:
     picture:
       size: 400
