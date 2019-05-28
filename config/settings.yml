@@ -21,3 +21,7 @@ config:
     host: "localhost:3000"
 pages:
   per_page9: 9
+products:
+  cur_slide_items: 3
+  trend: 10
+  news: 5

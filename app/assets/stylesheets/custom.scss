@@ -79,3 +79,33 @@
   width: 150px;
   height: 100px;
 }
+
+.single-products img{
+  width: auto;
+  height: 230px;
+}
+
+.recommended_items{
+  margin-top: 25px;
+}
+
+.brands_products h5{
+  display: inline;
+}
+
+.brands_products span{
+  position: absolute;
+  top: 50px;
+  margin-left: 15px;
+  font-style: italic;
+  color: brown;
+}
+
+.brands_products img{
+  height: 80px;
+  width: 80px;
+}
+
+.brands-name .nav-stacked li a {
+  display: inline;
+}
