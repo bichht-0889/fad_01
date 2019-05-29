@@ -1,0 +1,123 @@
+<%= provide :title, t(".title") %>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="product-details">
+          <!--product-details-->
+          <div class="col-sm-5">
+            <div class="view-product">
+              <%= link_to image_tag(@product.picture),class: "pic-1", alt: t("products.alt_img") %>
+            </div>
+            <div id="similar-product" class="carousel slide" data-ride="carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <% @list_pic.each do |item|%>
+                    <%= image_tag(item.picture_url, size: "80x80", alt: t("products.alt_img")) %>
+                  <% end %>
+                </div>
+              </div>
+              <!-- Controls -->
+              <a class="left item-control" href="#similar-product" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+              </a>
+              <a class="right item-control" href="#similar-product" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+              </a>
+            </div>
+
+          </div>
+          <div class="col-sm-7">
+            <div class="product-information">
+              <!--/product-information-->
+              <img src="images/product-details/new.jpg" class="newarrival" alt="" />
+
+              <div class="row">
+                <h2><%= @product.name %></h2>
+                <div class="rating">
+                  <div class="rateyo-readonly-widg"></div>
+                  <div class="rate_point_lb">
+                    <%= t("products.rating") %>
+                    <p class="rate_point"><%= @product.avg_rating %></p>
+                  </div>
+                </div>
+              </div>
+              <label><%= t("label.price") %></label>
+              <span><%= number_to_currency @product.price %></span>
+              <div>
+                <label><%= t("label.quantity") %></label>
+                <div class="def-number-input number-input safari_only">
+                  <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-
+                  </button>
+                  <input class="quantity" min="1" name="quantity" value="1" type="number"
+                    max="<%= @product.quantity %>">
+                  <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+
+                  </button>
+                </div>
+              </div>
+              <button type="button" class="btn btn-fefault cart">
+                <i class="fa fa-shopping-cart"></i>
+                <%= t("label.add_cart") %>
+              </button>
+            </div>
+            <!--/product-information-->
+          </div>
+        </div>
+        <!--/product-details-->
+
+        <div class="category-tab shop-details-tab">
+          <!--category-tab-->
+          <div class="col-sm-12">
+            <ul class="nav nav-tabs">
+              <li><a href="#details" data-toggle="tab"><%= t("label.details") %></a></li>
+              <li class="active"><a href="#reviews" data-toggle="tab"><%= t("label.reviews") %></a></li>
+            </ul>
+          </div>
+          <div class="tab-content">
+            <div class="tab-pane fade" id="details">
+              <p><%= @product.description %></p>
+            </div>
+
+            <div class="tab-pane fade active in" id="reviews">
+              <div class="col-sm-12">
+                <ul>
+                  <li><a href=""><i class="fa fa-user"></i>EUGEN</a></li>
+                  <li><a href=""><i class="fa fa-clock-o"></i>12:41 PM</a></li>
+                  <li><a href=""><i class="fa fa-calendar-o"></i>31 DEC 2014</a></li>
+                </ul>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                  et
+                  dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                  ex ea
+                  commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                  fugiat
+                  nulla pariatur.</p>
+                <p><b>Write Your Review</b></p>
+
+                <form action="#">
+                  <span>
+                    <input type="text" placeholder="Your Name" />
+                    <input type="email" placeholder="Email Address" />
+                  </span>
+                  <textarea name=""></textarea>
+                  <b>Rating: </b> <img src="images/product-details/rating.png" alt="" />
+                  <button type="button" class="btn btn-default pull-right">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!--/category-tab-->
+
+        <%= render "shared/hot_items" %>
+
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+<%= javascript_include_tag "rating.js" %>

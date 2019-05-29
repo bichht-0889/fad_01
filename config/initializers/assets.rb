@@ -13,7 +13,7 @@ Rails.application.config.assets.precompile += %w( html5shiv.js )
 Rails.application.config.assets.precompile += %w( jquery.prettyPhoto.js )
 Rails.application.config.assets.precompile += %w( jquery.scrollUp.min.js )
 Rails.application.config.assets.precompile += %w( main.js )
-Rails.application.config.assets.precompile += %w( price-range.js )
+Rails.application.config.assets.precompile += %w( rating.js )
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
