@@ -13,6 +13,12 @@ class ProductsController < ApplicationController
   def show
     load_hot_items
     @list_pic = @product.picture_details
+    @list_cmt = @product.comments.order_desc
+    @list_comment = @list_cmt.paginate(page: params[:page],
+      per_page: Settings.pages.per_page5)
+    @rates = @product.rates
+    @order_item = current_order.order_items.new if logged_in?
+    @comment = @product.comments.new
   end
 
   private

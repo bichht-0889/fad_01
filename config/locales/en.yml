@@ -21,7 +21,7 @@ en:
     categorie: "Categories"
     foods: "Foods"
     drinks: "Drinks"
-    blog: "Blog"
+    suggestion: "Suggestion"
     contact: "Contact"
     toggle_navi: "Toggle navigation"
     recommend_item: "recommended items"
@@ -33,6 +33,11 @@ en:
     logout: "Log out"
     add_cart: "Add to cart"
     all_items: "Hot Items"
+    submit: "Submit"
+    rating: "Rating: "
+    search: "Search"
+  title:
+    detail: "Detail"
   footer:
     copyright: "Copyright © 2019 Foods & Drinks. All rights reserved."
     text1: "Get the most recent updates from
@@ -108,6 +113,10 @@ en:
       new_user: "Create user"
       link_signup: "Sign up"
       title_signin: "Login to your account"
+  suggestions:
+    placeholder_text_area: "Your Message Here"
+    placeholder_title: "Title"
+    create_success: "Created Suggestion success!"
   user_mailer:
     account_activation:
       title: "Food && Drink"
@@ -126,6 +135,8 @@ en:
     product_not_found: "Product not found"
     index:
       title: "Home"
+    write_cmt: "Write Your Review"
+    err_cmt: "Error"
   helpers:
     session:
       bug_create_order: "Bug create order!"

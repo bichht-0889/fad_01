@@ -65,42 +65,75 @@
 #   )
 # end
 
-10.times do |n|
-  user_id = 4
-  status = 3
-  total_price = 500
+# 10.times do |n|
+#   user_id = 4
+#   status = 3
+#   total_price = 500
 
-  Order.create!(
-    user_id: user_id,
-    status: status,
-    total_price: total_price
-  )
-end
+#   Order.create!(
+#     user_id: user_id,
+#     status: status,
+#     total_price: total_price
+#   )
+# end
 
-OrderItem.create!(
-  order_id: 3,
-  product_id: 32,
-  price: 30,
-  quantity: 1
-)
+# OrderItem.create!(
+#   order_id: 3,
+#   product_id: 32,
+#   price: 30,
+#   quantity: 1
+# )
 
-OrderItem.create!(
-  order_id: 4,
-  product_id: 35,
-  price: 30,
-  quantity: 1
-)
+# OrderItem.create!(
+#   order_id: 4,
+#   product_id: 35,
+#   price: 30,
+#   quantity: 1
+# )
 
-OrderItem.create!(
-  order_id: 5,
-  product_id: 37,
-  price: 30,
-  quantity: 1
-)
+# OrderItem.create!(
+#   order_id: 5,
+#   product_id: 37,
+#   price: 30,
+#   quantity: 1
+# )
 
-OrderItem.create!(
-  order_id: 6,
-  product_id: 35,
-  price: 30,
-  quantity: 2
-)
+# OrderItem.create!(
+#   order_id: 6,
+#   product_id: 35,
+#   price: 30,
+#   quantity: 2
+# )
+
+# 10.times do |n|
+#   product_id = 1
+#   user_id = "#{n + 1}"
+#   content = "Thom ngon bo re qua troi =)))"
+# Comment.create!(
+#   product_id: product_id,
+#   user_id: user_id,
+#   content: content
+# )
+# end
+
+# 10.times do |n|
+#   product_id = 2
+#   user_id = "#{n + 1}"
+#   content = "Diem 10 chat luong"
+# Comment.create!(
+#   product_id: product_id,
+#   user_id: user_id,
+#   content: content
+# )
+# end
+
+# 10.times do |n|
+#   product_id = 3
+#   user_id = "#{n + 1}"
+#   content = "Good, phuc vu chu dao"
+# Comment.create!(
+#   product_id: product_id,
+#   user_id: user_id,
+#   content: content
+# )
+# end

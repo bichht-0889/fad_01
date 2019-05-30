@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   resources :users
   resources :account_activations, only: :edit
-  resources :products, only: %i(index show)
+  resources :products, only: %i(index show) do
+    resources :comments
+  end
   resources :carts, only: [:index, :show, :update]
   resources :order_items, only: %i(create update destroy)
   resources :order_items do
@@ -16,4 +18,5 @@ Rails.application.routes.draw do
   end
   resources :checkouts, onlyl: :index
   resources :history_orders
+  resources :sugests
 end

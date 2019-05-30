@@ -55,4 +55,10 @@ module SessionsHelper
   def check_loggin
     redirect_to login_path unless logged_in?
   end
+
+  def logged_in_user
+    return if logged_in?
+    flash[:danger] = t "controllers.user.not_login"
+    redirect_to login_path
+  end
 end

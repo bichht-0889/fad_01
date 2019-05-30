@@ -7,7 +7,6 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background:;
   position: relative;
   font-weight:400px;
 }
@@ -231,6 +230,7 @@ a#scrollUp i{
 .mainmenu ul li{
   padding-right: 15px;
   padding-left: 15px;
+  display: -webkit-box;
 }
 
 .mainmenu ul li:first-child{
@@ -345,7 +345,6 @@ ul.sub-menu {
 #footer {
   background: #F0F0E9;
 }
-
 
 .footer-top .container {
   border-bottom: 1px solid #E0E0DA;
@@ -896,7 +895,6 @@ h2.title {
   transition: height 500ms ease 0s;
   width: 100%;
   display: block;
-  opacity:;
 }
 
 .single-products:hover .product-overlay {
@@ -1094,7 +1092,7 @@ h2.title {
 .pagination {
   display: inline-block;
   margin-bottom: 25px;
-  margin-top: 0;
+  margin-top: 20px;
   padding-left: 15px;
 }
 
@@ -1332,7 +1330,8 @@ h2.title {
 }
 
 #reviews p{
-	color:#363432;
+  color:#363432;
+  margin-bottom: 17px;
 }
 
 #reviews  form span {
@@ -1357,7 +1356,7 @@ h2.title {
   background: #F0F0E9;
   border: medium none;
   color: #A6A6A1;
-  height: 195px;
+  height: 100px;
   margin-bottom: 25px;
   margin-top: 15px;
   outline: medium none;
@@ -1367,7 +1366,7 @@ h2.title {
   width: 99.5%;
 }
 
-#reviews button {
+#submit_review {
   background: #FE980F;
   border: 0 none;
   border-radius: 0;
@@ -1540,7 +1539,6 @@ h2.title {
   border: 1px solid #E6E4DF;
   margin-bottom: 50px
 }
-
 
 #cart_items .cart_info .cart_menu {
   background: #FE980F;
@@ -1930,7 +1928,6 @@ h2.title {
   border-bottom: 1px solid #F7F7F0;
 }
 
-
 /*************************
 *******Blog CSS******
 **************************/
@@ -2017,7 +2014,6 @@ h2.title {
 .post-meta span i{
   color: #FE980F
 }
-
 
 .blog-post-area
 .single-blog-post
@@ -2267,7 +2263,6 @@ h2.title {
   left: 27px;
 }
 
-
 .replay-box {
   margin-bottom: 107px;
   margin-top: 55px;
@@ -2343,8 +2338,6 @@ h2.title {
   left: 5px
 }
 
-
-
 /*************************
 ******* Contact CSS ********
 **************************/
@@ -2373,7 +2366,6 @@ h2.title {
   background-color: #fff;
   border: 1px solid #ddd;
   color: #696763;
-  height: 46px;
   padding: 6px 12px;
   width: 100%;
   font-size: 16px;
@@ -2390,7 +2382,6 @@ h2.title {
   margin-bottom: 15px;
   margin-top: 20px;
 }
-
 
 #contact-page .form-control:focus,
 #contact-page .form-control:hover {

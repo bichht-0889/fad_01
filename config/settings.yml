@@ -20,6 +20,7 @@ config:
     port: "587"
     host: "localhost:3000"
 pages:
+  per_page5: 5
   per_page9: 9
 products:
   cur_slide_items: 3

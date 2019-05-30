@@ -4,7 +4,6 @@ module ProductsHelper
   end
 
   def load_filter
-    @categories = Category.all
     @products = Product.paginate(page: params[:page],
      per_page: Settings.pages.per_page9)
     @order_item = current_order.order_items.new if current_user

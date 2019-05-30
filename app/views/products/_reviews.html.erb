@@ -1,0 +1,35 @@
+<div class="category-tab shop-details-tab">
+  <!--category-tab-->
+  <div class="col-sm-12">
+    <ul class="nav nav-tabs">
+      <li><a href="#details" data-toggle="tab"><%= t("label.details") %></a></li>
+      <li class="active"><a href="#reviews" data-toggle="tab"><%= t("label.reviews") %></a></li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane fade" id="details">
+      <p><%= @product.description %></p>
+    </div>
+
+    <div class="tab-pane fade active in" id="reviews">
+      <div class="col-sm-12">
+        <% @list_comment.each do |item|%>
+          <ul>
+            <li><a href=""><i class="fa fa-user"></i><%= item.name %></a></li>
+            <li><i class="fa fa-clock-o"></i> <%= item.created_at %></li>
+          </ul>
+          <p><%= item.content %></p>
+        <% end %>
+        <%= will_paginate @list_comment, class: "pagination" %>
+        <p><b><%= t("products.write_cmt") %></b></p>
+        <b><%= t("label.rating") %></b>
+        <%= form_for [@product, @comment] do |f| %>
+          <%= f.text_area :content, rows: 3 %>
+          <%= f.submit t("label.submit"), class: "btn btn-default pull-right", id: "submit_review" %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--/category-tab-->

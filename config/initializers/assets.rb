@@ -8,7 +8,6 @@ Rails.application.config.assets.version = '1.0'
 # Add Yarn node_modules folder to the asset load path.
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( contact.js )
-Rails.application.config.assets.precompile += %w( gmaps.js )
 Rails.application.config.assets.precompile += %w( html5shiv.js )
 Rails.application.config.assets.precompile += %w( jquery.prettyPhoto.js )
 Rails.application.config.assets.precompile += %w( jquery.scrollUp.min.js )
