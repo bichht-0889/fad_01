@@ -24,7 +24,7 @@
           <% if order.confirm? %>
             <%= link_to t(".cancel"), history_order_path(order), method: :put, data: { confirm: I18n.t("evaluators.alert.confirm_cancel")}, class: "btn btn-primary" %>
           <% else %>
-            <b><%= t ".time" %>: <i><%= I18n.localize order.updated_at %></i></b>
+            <b><%= t ".time" %>: <i><%= l order.updated_at %></i></b>
           <% end %>
         </p>
       </td>

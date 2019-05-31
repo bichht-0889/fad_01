@@ -48,13 +48,13 @@
                   <%= link_to "+", increase_order_item_path(order),
                     class: "cart_quantity_up",  remote: true %>
 
-                  <%= form_for order do |f| %>
-                    <span>
-                      <%= render "shared/error_messages", object: f.object %>
-                    </span>
+                <%= form_for order do |f|%>
+                  <span>
+                    <%= render "shared/error_messages", object: f.object %>
+                  </span>
                   <%= f.text_field :quantity,
-                    class: "cart_quantity_input",size: "2" %>
-                  <% end %>
+                    class: "cart_quantity_input change_quantity",size: "2"%>
+                <% end %>
 
                   <%= link_to "-", decrease_order_item_path(order),
                     class: "cart_quantity_dow",  remote: true %>

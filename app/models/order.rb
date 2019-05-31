@@ -2,8 +2,11 @@ class Order < ApplicationRecord
   belongs_to :user
   has_many :order_items, dependent: :destroy
   has_many :products, through: :order_items
+  delegate :name, to: :user, prefix: :user
   enum status: {waiting: 0, cancel: 1,
                 confirm: 2, refuse: 3, accept: 4, finish: 5}
+  scope :oldest_time, ->{order created_at: :asc}
+  scope :search_status, ->(status){where status: status if status.present?}
 
   def confirm_quantity_product
     order_items.map do |order_item|

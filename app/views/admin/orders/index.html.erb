@@ -1,0 +1,21 @@
+<%= provide :title, t(".title") %>
+<div class="container">
+  <h1><%= t ".title" %></h1>
+  <ul class="nav nav-tabs">
+  <%= form_tag admin_orders_path, method: :get do %>
+    <%= select_tag :status, options_for_select(@order.statuses, params[:status]) %>
+    <%= submit_tag t(".search"), class: "btn btn-success" %>
+  <% end %>
+  </ul>
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3><%= t ".confirm" %></h3>
+      <% if @order %>
+        <%= render @order %>
+      <% else %>
+        <b><i><%= t ".no_order" %></i></b>
+      <% end %>
+    </div>
+    <%= will_paginate @order %>
+  </div>
+</div>

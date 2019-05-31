@@ -26,6 +26,7 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes user_params
       flash[:success] = t "controllers.user.update_success"
+      return redirect_to admin_users_path if current_user.admin?
       redirect_to root_path
     else
       render :edit

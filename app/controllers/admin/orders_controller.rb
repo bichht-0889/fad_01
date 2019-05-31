@@ -1,0 +1,44 @@
+class Admin::OrdersController < ApplicationController
+  before_action :check_loggin, :check_role_admin
+  before_action :load_order_admin, only: :update
+
+  def index
+    @order = Order.oldest_time.search_status(params[:status]).paginate(page:
+     params[:page], per_page: Settings.app.admin.orders.per_page)
+  end
+
+  def update
+    if params[:status] == "accept"
+      accept
+    elsif params[:status] == "refuse"
+      refuse
+    else
+      flash[:info] = t "controllers.admin.order.not_found_status"
+    end
+  rescue NoMethodError => e
+    lash[:danger] = t "controllers.admin.order.bug_update", name: e.message
+    redirect_to admin_orders_path
+  end
+
+  private
+
+  def accept
+    @order_accept = @order.accept!
+    flash[:success] = t "controllers.admin.order.accept_success"
+    redirect_to admin_orders_path
+  end
+
+  def refuse
+    @order_refuse = @order.refuse!
+    @order.cancel_quatity_product
+    flash[:info] = t "controllers.admin.order.refuse_success"
+    redirect_to admin_orders_path
+  end
+
+  def load_order_admin
+    @order = Order.find_by id: params[:id]
+    return if @order
+    flash[:danger] = t "controllers.admin.order.not_found_order"
+    redirect_to admin_orders_path
+  end
+end

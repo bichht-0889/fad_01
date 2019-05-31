@@ -1,8 +1,9 @@
 class OrderItemsController < ApplicationController
   before_action :check_loggin, :current_user
   after_action :update_total_price
-  before_action :load_order_item, only: %i(decrease increase)
+  before_action :load_order_item, only: %i(decrease increase update)
   before_action :load_order, only: %i(destroy subtotal_order update_total_price)
+  skip_before_action :verify_authenticity_token
 
   def create
     @order = current_user.orders.waiting.first
@@ -16,6 +17,20 @@ class OrderItemsController < ApplicationController
       flash[:info] = t "controllers.order_item.product_not_found"
       redirect_to root_path
     end
+  end
+
+  def update
+    @product = @order_item.product
+    @input_quantity = params[:order_item][:quantity].to_i
+    if @input_quantity <= 0 || @input_quantity > @product.quantity
+      @note = t "controllers.order_item.max_quantity", number: @product.quantity
+      flash[:info] = @note
+    else
+      @order_item.update_attribute :quantity, @input_quantity
+      update_total_price
+    end
+    @order_items = @order.order_items
+    redirect_to carts_path
   end
 
   def destroy
@@ -39,7 +54,7 @@ class OrderItemsController < ApplicationController
   end
 
   def decrease
-    @line_item = @order.remove_product @quantity_order_item
+    @line_item = @order.remove_product @order_item
     respond_to do |format|
       if @line_item.save
         update_total_price
@@ -53,11 +68,11 @@ class OrderItemsController < ApplicationController
   end
 
   def increase
-    @product = Product.find_by id: @quantity_order_item.product_id
-    if @product.quantity == @quantity_order_item.quantity
+    @product = Product.find_by id: @order_item.product_id
+    if @product.quantity == @order_item.quantity
       quatity_equal @order, @product
     else
-      @line_item = @order.add_product @quantity_order_item
+      @line_item = @order.add_product @order_item
       respond_to do |format|
         if @line_item.save
           update_total_price
@@ -113,7 +128,7 @@ class OrderItemsController < ApplicationController
 
   def load_order_item
     @order = current_order
-    @quantity_order_item = OrderItem.find_by id: params[:id]
+    @order_item = OrderItem.find_by id: params[:id]
   end
 
   def load_order
