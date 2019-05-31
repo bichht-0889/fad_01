@@ -8,12 +8,13 @@ class Admin::OrdersController < ApplicationController
   end
 
   def update
-    if params[:status] == "accept"
+    if params[:status] == Settings.app.admin.orders.accept
       accept
-    elsif params[:status] == "refuse"
+    elsif params[:status] == Settings.app.admin.orders.refuse
       refuse
     else
       flash[:info] = t "controllers.admin.order.not_found_status"
+      redirect_to admin_orders_path
     end
   rescue NoMethodError => e
     lash[:danger] = t "controllers.admin.order.bug_update", name: e.message
@@ -23,13 +24,13 @@ class Admin::OrdersController < ApplicationController
   private
 
   def accept
-    @order_accept = @order.accept!
+    @order.accept!
     flash[:success] = t "controllers.admin.order.accept_success"
     redirect_to admin_orders_path
   end
 
   def refuse
-    @order_refuse = @order.refuse!
+    @order.refuse!
     @order.cancel_quatity_product
     flash[:info] = t "controllers.admin.order.refuse_success"
     redirect_to admin_orders_path

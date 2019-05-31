@@ -20,6 +20,8 @@ app:
       per_page: 10
     orders:
       per_page: 2
+      accept: "accept"
+      refuse: "refuse"
 config:
   development:
     port: "587"
