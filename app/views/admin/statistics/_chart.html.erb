@@ -1,0 +1,113 @@
+<div class="category-tab shop-details-tab">
+  <div class="col-sm-12">
+    <ul class="nav nav-tabs">
+      <li><a href="#users" data-toggle="tab"><%= t("label.users") %></a></li>
+      <li class="active"><a href="#orders" data-toggle="tab"><%= t("label.orders") %></a></li>
+      <li><a href="#products" data-toggle="tab"><%= t("label.products") %></a></li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane fade" id="users">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-4 offset-md-2">Users activated:</div>
+            <div class="col-md-4"><%= @users_activated %>/<%= User.all.size %></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 offset-md-2">Users registed this month:</div>
+            <div class="col-md-4"><%= @users_this_month %></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <%= pie_chart @chart_activated_user.count %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= column_chart @users.count %>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade active in" id="orders">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Order by month:</h4>
+          <%= pie_chart @orders_bym.count %>
+        </div>
+        <div class="col-md-6">
+          <h4>Order by day this month:</h4>
+          <%= line_chart @orders_byd.count %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h4>Order by day from:</h4>
+          <%= form_tag admin_statistics_path, method: :get do %>
+          <div class="row">
+            <div class="form-group col-md-3">
+              <input type="date" value=<%= params[:first] %> min="2019-01-01" name="first" class="form-control" {model:
+                ActiveSupport::TimeZone, default: Time.zone.name}>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="date" value=<%= params[:last] %> max=<%= Date.today %> name="last" class="form-control">
+            </div>
+            <%= submit_tag "Show", class: "btn btn-success" %>
+          </div>
+          <% end %>
+        </div>
+        <% if @orders_fillter %>
+        <div class="col-md-12">
+          <%= column_chart @orders_fillter.count %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="products">
+      <div class="row">
+        <div class="col-md-12">
+          <%= column_chart @stock_take %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div data-spy="scroll" data-target="#list-stock" data-offset="50">
+            <div class="row" id="list-stock">
+              <div class="col-md-6">
+                <h5>Product Name</h5>
+                <% @stock_take.each do |product| %>
+                  <div class="col-md-12">
+                    <%= product[0] %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-md-3">
+                <h5>Total Quantity</h5>
+                <% @stock_take.each do |product| %>
+                  <div class="col-md-12">
+                    <%= product[1] %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="col-md-3">
+                <h5>Total Price</h5>
+                <% @stock_price.each do |price| %>
+                  <div class="col-md-12">
+                    <%= price[1] %>
+                  </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <%= column_chart @stock_price %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

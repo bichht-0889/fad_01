@@ -1,34 +1,38 @@
 <%= provide :title, t(".title", name: @user.name) %>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-8 col-md-offset-4">
-        <div class="profile">
-          <%= image_tag @user.picture.url.to_s,
-          class: "profile_user" %>
-        </div>
-        <div class="profile">
-          <ul class="list_info">
-            <li>
-              <i class="fa fa-user-o">
-                <b><%= @user.name %></b>
-              </i>
-            </li>
-            <li>
-              <i class="fa fa-phone-square" >
-                <b><%= @user.phone %> </b>
-              </i>
-            </li>
-            <li>
-              <i class="fa fa-map-marker" aria-hidden="true">
-              <b><%= @user.address %></b>
-              </i>
-            </li>
-            <li>
-              <%= link_to t("label.setting"), edit_user_path(current_user),
-                class: "btn btn-primary" %>
-            </li>
-          </ul>
-        </div>
+  <% if current_user.admin? %>
+    <%= render "admin" %>
+  <% else %>
+    <div class="row">
+      <div class="col-sm-8 col-md-offset-4">
+          <div class="profile">
+            <%= image_tag @user.picture.url.to_s,
+            class: "profile_user" %>
+          </div>
+          <div class="profile">
+            <ul class="list_info">
+              <li>
+                <i class="fa fa-user-o">
+                  <b><%= @user.name %></b>
+                </i>
+              </li>
+              <li>
+                <i class="fa fa-phone-square" >
+                  <b><%= @user.phone %> </b>
+                </i>
+              </li>
+              <li>
+                <i class="fa fa-map-marker" aria-hidden="true">
+                <b><%= @user.address %></b>
+                </i>
+              </li>
+              <li>
+                <%= link_to t("label.setting"), edit_user_path(current_user),
+                  class: "btn btn-primary" %>
+              </li>
+            </ul>
+          </div>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

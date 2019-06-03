@@ -7,7 +7,7 @@
           <!--product-details-->
           <div class="col-sm-5">
             <div class="view-product">
-              <%= link_to image_tag(@product.picture),class: "pic-1", alt: t("products.alt_img") %>
+              <%= link_to image_tag(@product.picture_url),class: "pic-1", alt: t("products.alt_img") %>
             </div>
             <div id="similar-product" class="carousel slide" data-ride="carousel">
               <!-- Wrapper for slides -->
@@ -41,22 +41,39 @@
                 </div>
               </div>
               <label><%= t("label.price") %></label>
-              <span><%= number_to_currency @product.price %></span>
-              <div>
-                <label><%= t("label.quantity") %></label>
-                <div class="def-number-input number-input safari_only">
-                  <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-
-                  </button>
-                  <input class="quantity" min="1" name="quantity" value="1" type="number"
-                    max="<%= @product.quantity %>">
-                  <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+
-                  </button>
+              <span><%= number_to_currency @product.price %></span><br>
+              <label><%= t("label.quantity") %></label>
+              <% if logged_in? %>
+                <%= form_for @order_item, remote: true do |f| %>
+                <div>
+                  <label><%= t("label.quantity") %></label>
+                  <div class="def-number-input number-input safari_only">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-
+                    </button>
+
+                    <%= f.number_field :quantity, value: Settings.app.products.value, min: Settings.app.products.min, max: @product.quantity , class: " quantity" %>
+                    <%= f.hidden_field :product_id, value: @product.id %>
+                    <%= f.hidden_field :price, value: @product.price %>
+
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+
+                    </button>
+                  </div>
                 </div>
-              </div>
-              <button type="button" class="btn btn-fefault cart">
-                <i class="fa fa-shopping-cart"></i>
-                <%= t("label.add_cart") %>
-              </button>
+                  <%= f.button :submit, class: "btn btn-default add-to-cart" do %>
+                    <i class="fa fa-shopping-cart"></i> <%= t("label.add_cart") %>
+                  <% end %>
+                <% end %>
+              <% else %>
+                 <div class="def-number-input number-input safari_only">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-
+                    </button>
+                    <input class="quantity" min="1" name="quantity" value="1" type="number"
+                      max="<%= @product.quantity %>">
+                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+
+                    </button>
+                </div><br>
+                <%= link_to order_items_path, method: :post, class: "btn btn-fefault cart" do %><i class="fa fa-shopping-cart"></i> <%= t("label.add_cart") %><% end %>
+            <% end %>
             </div>
             <!--/product-information-->
           </div>

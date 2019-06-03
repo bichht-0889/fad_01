@@ -1,0 +1,28 @@
+<tr>
+  <% if sugest.status == 1 %>
+  <td><%= t ("sugestions.other") %></td>
+  <% else %>
+  <td><%= sugest.category.name %></td>
+  <% end %>
+  <td><%= sugest.name %></td>
+  <td><%= sugest.description %></td>
+  <td><%= sugest.new_category %></td>
+  <% if sugest.new_cate? %>
+    <td>
+      <%= link_to "+", admin_sugest_path(sugest, status: :new_cate),
+        method: :put, class: "btn btn-success" %>
+    </td>
+    <% else %>
+      <td></td>
+  <% end %>
+  <td><%= sugest.user.name %></td>
+  <td><%= sugest.status %></td>
+  <td class="text-center">
+    <%= link_to t(".accept"), admin_sugest_path(sugest, status: :accept),
+      method: :put, class: "btn btn-success" %>
+  </td>
+  <td class="text-center">
+    <%= link_to t(".refuse"), admin_sugest_path(sugest, status: :refuse),
+      method: :put, class: "btn btn-danger" %>
+  </td>
+</tr>

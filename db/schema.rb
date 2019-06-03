@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_17_182648) do
+ActiveRecord::Schema.define(version: 2019_06_05_063654) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "status", default: 1
+    t.integer "status", default: 1, null: false
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -85,8 +85,10 @@ ActiveRecord::Schema.define(version: 2019_05_17_182648) do
     t.bigint "category_id"
     t.string "name"
     t.text "description"
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "new_category"
     t.index ["category_id"], name: "index_sugests_on_category_id"
     t.index ["user_id"], name: "index_sugests_on_user_id"
   end

@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_items
   has_many :user_rates, through: :rates, source: :user
   has_many :user_comments, through: :comments, source: :user
+  mount_uploader :picture, PictureUploader
   scope :get_category_id, ->(category_id){product category_id}
 
   def self.product category_id

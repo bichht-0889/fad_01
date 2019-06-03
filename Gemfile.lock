@@ -49,7 +49,7 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     ast (2.4.0)
-    autoprefixer-rails (9.5.1.1)
+    autoprefixer-rails (9.6.0)
       execjs
     bcrypt (3.1.12)
     bindex (0.7.0)
@@ -60,7 +60,7 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.3)
     byebug (11.0.1)
-    capybara (3.21.0)
+    capybara (3.22.0)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -72,11 +72,13 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chartkick (3.2.0)
     childprocess (1.0.1)
       rake (< 13.0)
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    chronic (0.10.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -93,10 +95,10 @@ GEM
     deep_merge (1.2.1)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
-    dry-configurable (0.8.2)
+    dry-configurable (0.8.3)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4, >= 0.4.7)
-    dry-container (0.7.0)
+    dry-container (0.7.1)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
     dry-core (0.4.7)
@@ -275,7 +277,7 @@ GEM
     fog-voxel (0.1.0)
       fog-core
       fog-xml
-    fog-vsphere (3.0.0)
+    fog-vsphere (3.1.0)
       fog-core
       rbvmomi (>= 1.9, < 3)
     fog-xenserver (1.0.0)
@@ -292,11 +294,13 @@ GEM
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (4.1.2)
+      activesupport (>= 4.2)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    i18n-js (3.2.3)
+    i18n-js (3.3.0)
       i18n (>= 0.6.6)
     io-like (0.3.0)
     ipaddress (0.8.3)
@@ -342,7 +346,7 @@ GEM
       ast (~> 2.4.0)
     pg (1.1.4)
     powerpack (0.1.2)
-    public_suffix (3.0.3)
+    public_suffix (3.1.0)
     puma (3.12.1)
     rack (2.0.7)
     rack-test (1.1.0)
@@ -397,7 +401,7 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    ruby-progressbar (1.10.0)
+    ruby-progressbar (1.10.1)
     ruby_dep (1.5.0)
     rubyzip (1.2.3)
     sass (3.7.4)
@@ -451,6 +455,8 @@ GEM
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
+    whenever (0.11.0)
+      chronic (>= 0.6.3)
     will_paginate (3.1.7)
     xml-simple (1.1.5)
     xmlrpc (0.3.0)
@@ -467,6 +473,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   carrierwave (= 1.2.2)
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   config
@@ -475,6 +482,7 @@ DEPENDENCIES
   fog (= 1.42)
   font-awesome-rails
   font-awesome-sass
+  groupdate
   i18n-js
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.3)
@@ -494,6 +502,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  whenever
   will_paginate
 
 RUBY VERSION

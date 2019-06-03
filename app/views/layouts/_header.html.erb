@@ -1,4 +1,4 @@
-<header id="header">
+<header id="header" class="navbar navbar-default navbar-fixed-top">
   <!--header-->
   <div class="header_top">
     <!--header_top-->
@@ -31,12 +31,27 @@
     <!--header-middle-->
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
-          <div class="logo pull-left">
-            <%= image_tag("logo.png", :alt => "logo", :class => "img-thumbnail", size: "150") %>
+        <div class="col-sm-8">
+          <div class="mainmenu pull-left">
+            <ul class="nav navbar-nav collapse navbar-collapse">
+              <li><%= link_to root_path, class: "active" do %><%= t("label.home") %><% end %></li>
+              <li class="dropdown"><%= link_to t("label.categorie"), products_path %><i class="fa fa-angle-down"></i>
+                <ul role="menu" class="sub-menu">
+                  <% load_categories.each do |category|%>
+                    <li><%= link_to category.name, products_path(get_category_id: category.id)%></li>
+                  <% end %>
+                </ul>
+              </li>
+              <li><%= link_to t("label.suggestion"), sugests_path %></li>
+            </ul>
+          </div>
+          <div>
+            <div class="search_box pull-right">
+              <input type="text" placeholder="Search" />
+            </div>
           </div>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-4">
           <div class="shop-menu pull-right">
             <ul class="nav navbar-nav">
               <li>
@@ -58,6 +73,10 @@
                         </li><br>
                         <li>
                           <%= link_to t("label.manage_order"), admin_orders_path %>
+                        </li>
+                        <br>
+                        <li>
+                          <%= link_to t("label.manage_sugest"), admin_sugests_path %>
                         </li>
                     </ul>
                   </li>
@@ -119,26 +138,8 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          <div class="mainmenu pull-left">
-            <ul class="nav navbar-nav collapse navbar-collapse">
-              <li><%= link_to root_path, class: "active" do %><%= t("label.home") %><% end %></li>
-              <li class="dropdown"><%= link_to t("label.categorie"), products_path %><i class="fa fa-angle-down"></i>
-                <ul role="menu" class="sub-menu">
-                  <% load_categories.each do |category|%>
-                    <li><%= link_to category.name, products_path(get_category_id: category.id)%></li>
-                  <% end %>
-                </ul>
-              </li>
-              <li><a href=""><%= t("label.blog") %></a></li>
-              <li><a href=""><%= t("label.contact") %></a></li>
-            </ul>
-          </div>
         </div>
-        <div class="col-sm-6">
-          <div class="search_box pull-right">
-            <input type="text" placeholder="Search" />
-          </div>
-        </div>
+        
       </div>
     </div>
   </div>

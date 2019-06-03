@@ -10,12 +10,24 @@ class OrderItem < ApplicationRecord
     quantity * price
   end
   
+  scope :stock_take_products, -> do
+    joins(:product)
+    .group(:name)
+    .sum(:quantity)
+  end
+
+  scope :stock_take_price, -> do
+    joins(:product)
+    .group(:name)
+    .sum(:price)
+  end
+
   scope :trend_items, -> do
     group(:product_id)
     .order("SUM(quantity) DESC")
     .select("product_id, SUM(quantity) AS total")
   end
-
+    
   private
 
   def product_present
