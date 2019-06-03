@@ -35,6 +35,9 @@ en:
     all_items: "Hot Items"
     submit: "Submit"
     rating: "Rating: "
+    setting: "Setting"
+    profile: "Profile"
+    history_order: "History order"
   title_1:
     detail: "Detail"
     admin: "Admin"
@@ -85,8 +88,12 @@ en:
     admin:
       user:
         not_found: "User not found!"
-        success: "successfully!"
+        success: "delte successfully!, count order refuse: %{count}"
         danger: "bug in delete!"
+        accept: "Users have %{count} shopping carts in transit!,
+          Click cancel to delete"
+        block: "%{name} has been block!"
+        unblock: "%{name} has been unblock"
       order:
         not_found_order: "Order not found!"
         accept_success: "Order Aceepted!"
@@ -210,6 +217,10 @@ en:
         edit: "Edit"
         total_user: "Total User"
         image: "Avatar"
+        list_user: "List User"
+        block: "Block"
+        unblock: "Unblock"
+        cancel: "Cancel"
       edit:
         title: "Admin update"
     orders:
@@ -220,6 +231,7 @@ en:
         refuse: "Refuse"
         finish: "Finish"
         no_order: "Order No transaction history!!"
+        no-confirm: "Order confirm No transaction history!!"
         no_cancel: "Order cancel No transaction history!!"
         no_accept: "Order accept No transaction history!!"
         no_refuse: "Order refuse No transaction history!!"

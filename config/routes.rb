@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   resources :history_orders
   namespace :admin do
     resources :orders
+    resources :users
   end
 end
