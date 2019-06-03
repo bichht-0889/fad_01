@@ -133,6 +133,20 @@ en:
       new_user: "Create user"
       link_signup: "Sign up"
       title_signin: "Login to your account"
+  statistics:
+    index:
+      quantity_member: "Quantity Member"
+      quantity_order: "Quantity Order"
+      quantity_block: "Quantity Block"
+      statistical_user: "Statistical User"
+      quantity_order: "Quantity Order"
+      quantity_finish: "Quantity Finish"
+      quantity_cancel: "Quantity Cancel"
+      statistical_product: "Statistical User"
+      quantity_product: "Quantity Product"
+      statistical_order: "Statistical Order"
+      Start: "Start"
+      end: "End"
   user_mailer:
     account_activation:
       title: "Food && Drink"
@@ -140,9 +154,21 @@ en:
       welcom_to: "Welcome to the Food & Drink! Click on the link
                   below to activate your account:"
       activate: "Activate"
+    mail_month:
+      quantity_member: "Quantity Member"
+      quantity_order: "Quantity Order"
+      quantity_block: "Quantity Block"
+      statistical_user: "Statistical User"
+      quantity_order: "Quantity Order"
+      quantity_finish: "Quantity Finish"
+      quantity_cancel: "Quantity Cancel"
+      total_price: "Total price"
+      statistical_order: "Statistical Order"
+
   mailers:
     user:
       account_activation: "Account activation"
+      statistical: "Statistical"
   uploaders:
     img: "user.jpg"
 

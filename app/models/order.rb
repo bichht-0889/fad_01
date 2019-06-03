@@ -7,6 +7,11 @@ class Order < ApplicationRecord
                 confirm: 2, refuse: 3, accept: 4, finish: 5}
   scope :oldest_time, ->{order created_at: :asc}
   scope :search_status, ->(status){where status: status if status.present?}
+  scope :period_time, -> do
+    where created_at: (Time.now - Settings.statis.one.month)..Time.now
+  end
+  scope :date_start, ->(start){where("created_at >= ?",start)}
+  scope :date_end, ->(date_end){where("created_at <= ?",date_end)}
 
   def confirm_quantity_product
     order_items.map do |order_item|

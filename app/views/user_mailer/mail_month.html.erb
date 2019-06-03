@@ -1,0 +1,35 @@
+<h1><%= Time.now - 1.month %> - <%= Time.now %></h1>
+<h2><%= t "statistical_user" %></h2>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".quantity_member" %></th>
+        <th><%= t ".quantity_block" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @user.size %></td>
+        <td><%= @user.block.size %></td>
+      </tr>
+    </tbody>
+</table><hr>
+<h2><%= t "statistical_order" %></h2>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%= t ".quantity_order" %></th>
+        <th><%= t ".quantity_finish" %></th>
+        <th><%= t ".quantity_cancel" %></th>
+        <th><%= t ".total_price" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @order.size %></td>
+        <td><%= @order.finish.size %></td>
+        <td><%= @order.cancel.size %></td>
+        <td><%= @order.finish.sum(:total_price) %></td>
+      </tr>
+    </tbody>
+</table><hr>

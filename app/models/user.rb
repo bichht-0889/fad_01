@@ -29,6 +29,11 @@ class User < ApplicationRecord
   enum role: {member: 0, admin: 1, block: 2}
   scope :asc_name, ->{order name: :asc}
   scope :block_user, ->{where.not role: :block}
+  scope :period_time, -> do
+    where created_at: (Time.now - Settings.statis.one.month)..Time.now
+  end
+  scope :date_start, ->(start){where("created_at >= ?",start)}
+  scope :date_end, ->(date_end){where("created_at <= ?",date_end)}
   def picture_size
     return unless picture.size > Settings.app.user.size.megabytes
     errors.add :picture, t("models.user.bug_size"),
@@ -62,6 +67,11 @@ class User < ApplicationRecord
 
   def activate
     update_columns activated: true, activated_at: Time.zone.now
+  end
+
+  def self.send_mail_statistical
+    UserMailer.mail_month(User.all.period_time,
+      Order.all.period_time).deliver_now
   end
 
   private
