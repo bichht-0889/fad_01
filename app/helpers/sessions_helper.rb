@@ -83,4 +83,8 @@ module SessionsHelper
       redirect_to login_path
     end
   end
+
+  def categories
+    Category.all
+  end
 end

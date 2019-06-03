@@ -1,0 +1,46 @@
+<div class="container">
+  <%= form_tag admin_statistics_path, method: :get do %>
+      <div class="form-group col-md-3">
+        <input type="date" name="first" class="form-control">
+      </div>
+      <div class="form-group col-md-3">
+        <input type="date" name="last" class="form-control">
+      </div>
+    <%= submit_tag "search", class: "btn btn-success" %>
+    <b><%= t ".start" %>: <i><%= params[:first] %></i> <%= t ".end" %>: <i><%= params[:last] %></i></b>
+  <% end %>
+  <h2><%= t "statistical_user" %></h2>
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t ".quantity_member" %></th>
+          <th><%= t ".quantity_block" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @users.size %></td>
+          <td><%= @users.block.size %></td>
+        </tr>
+      </tbody>
+  </table><hr>
+  <h2><%= t "statistical_order" %></h2>
+  <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t ".quantity_order" %></th>
+          <th><%= t ".quantity_finish" %></th>
+          <th><%= t ".quantity_cancel" %></th>
+          <th><%= t ".total_price" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @orders.size %></td>
+          <td><%= @orders.finish.size %></td>
+          <td><%= @orders.cancel.size %></td>
+          <td><%= number_to_currency @orders.finish.sum(:total_price) %></td>
+        </tr>
+      </tbody>
+  </table><hr>
+</div>

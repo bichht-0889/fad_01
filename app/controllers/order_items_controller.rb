@@ -95,10 +95,13 @@ class OrderItemsController < ApplicationController
     end
   end
 
-  def plus_quantity check
-    @quantity = check.quantity
-    @order_item = check.update_attribute :quantity,
-      @quantity + Settings.app.order_items.plus
+  def plus_quantity order_item, product
+    @quantity = order_item.quantity + params[:order_item][:quantity].to_i
+    if @quantity > product.quantity
+      order_item.update_attribute :quantity, product.quantity
+    else
+      order_item.update_attribute :quantity, @quantity
+    end
   end
 
   def quantity_not_zero order_item, product, order
@@ -107,7 +110,7 @@ class OrderItemsController < ApplicationController
         flash[:info] = t "controllers.order_item.max_quantity",
           number: product.quantity
       else
-        plus_quantity order_item
+        plus_quantity order_item, product
       end
     else
       @order_item = order.order_items.new order_item_params

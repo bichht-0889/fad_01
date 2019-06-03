@@ -1,0 +1,15 @@
+<%= provide :title, t("sugests.title") %>
+<%= provide :button, t("sugests.button") %>
+<%= provide :url, admin_sugests_path(@product) %>
+<div id="contact-page" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="contact-form">
+          <h2 class="title text-center"><%= t("label.cr_suggestion")%></h2>
+          <div class="col-md-6 col-md-offset-3">
+            <%= render "form" %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

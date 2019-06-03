@@ -38,6 +38,7 @@ en:
     setting: "Setting"
     profile: "Profile"
     history_order: "History order"
+    cr_suggestion: "Create product by customer'suggestion"
   title_1:
     detail: "Detail"
     admin: "Admin"
@@ -59,7 +60,25 @@ en:
     order: "Order Status"
     service: "Service"
     policies: "Policies"
+  sugests:
+    title: "Create product"
+    button: "Create"
+    index:
+      title: "Sugestion"
+    form:
+      name: "Enter name of product"
+      price: "Enter price of product"
+      description: "Enter description of product"
+      quantity: "Enter quantity of product"
+  suggestions:
+    placeholder_title: "Enter your Sugestion' Title"
+    placeholder_text_area: "Enter your Sugestion'description"
+    placeholder_new_category: "Enter you New Category"
+    create_success: "Thank you for your sugestion!"
+    other: "Other"
   controllers:
+    product:
+      success: "Create product successfully"
     user:
       sign_up_success: "Acount %{name} created date: %{date}. Please check
                         your email to activate your account."
@@ -100,6 +119,24 @@ en:
         refuse_success: "Order Refused!"
         bug_update: "Bug update: %{name}!"
         not_found_status: "Access bug!"
+      sugests:
+        error: "Error"
+        success: "Success"
+        bug_update: "Bug update: %{name}!"
+        accept_success: "Sugest acepted"
+        refuse_success: "Sugest Refused!"
+        sug_done: "Sugest is handled"
+        refuse: "Suggestion refused"
+        cate_success: "Created new category"
+        cate_fisrt: "Please create category: '%{name}' first"
+        not_found: "Not found"
+      product:
+        post_success: "Product add successfully!"
+        post_danger: "Product add bug!"
+        not_found: "Product not found!"
+        update_success: "Update product successfully!"
+        delete_success: "Delete product successfully!"
+        delete_bug: "Delete product bug!"
   users:
     new:
       title: "Sign up"
@@ -133,6 +170,20 @@ en:
       new_user: "Create user"
       link_signup: "Sign up"
       title_signin: "Login to your account"
+  statistics:
+    index:
+      quantity_member: "Quantity Member"
+      quantity_order: "Quantity Order"
+      quantity_block: "Quantity Block"
+      statistical_user: "Statistical User"
+      quantity_order: "Quantity Order"
+      quantity_finish: "Quantity Finish"
+      quantity_cancel: "Quantity Cancel"
+      statistical_product: "Statistical User"
+      quantity_product: "Quantity Product"
+      statistical_order: "Statistical Order"
+      Start: "Start"
+      end: "End"
   user_mailer:
     account_activation:
       title: "Food && Drink"
@@ -140,9 +191,21 @@ en:
       welcom_to: "Welcome to the Food & Drink! Click on the link
                   below to activate your account:"
       activate: "Activate"
+    mail_month:
+      quantity_member: "Quantity Member"
+      quantity_order: "Quantity Order"
+      quantity_block: "Quantity Block"
+      statistical_user: "Statistical User"
+      quantity_order: "Quantity Order"
+      quantity_finish: "Quantity Finish"
+      quantity_cancel: "Quantity Cancel"
+      total_price: "Total price"
+      statistical_order: "Statistical Order"
+
   mailers:
     user:
       account_activation: "Account activation"
+      statistical: "Statistical"
   uploaders:
     img: "user.jpg"
 
@@ -177,6 +240,8 @@ en:
       histotry: "History"
       checkout: "Check Out"
       time: "Time"
+    error_messages:
+      shared: "total bug : %{count}"
   orders:
     order:
       name: "Name"
@@ -205,6 +270,9 @@ en:
       bug: "not valid."
       confirm_delete: "Are you sure?"
       confirm_cancel: "Are you cancel?"
+  categories:
+    category_not_found: "Category is not found"
+    cate_created: "Category created"
   admin:
     users:
       index:
@@ -239,3 +307,27 @@ en:
         title: "Admin Order"
         total: "Total"
         search: "Search"
+    products:
+      form:
+        name: "Name"
+        price: "Price"
+        quantity: "Quantity"
+        description: "Description"
+        post: "Post"
+      new:
+        title: "Admin Product"
+        button: "Add Product"
+      index:
+        title: "List Product"
+        total_product: "Total Product"
+        image: "Image"
+        name: "Name"
+        price: "Price"
+        quantity: "Quantity"
+        rating: "Rating"
+        control: "Control"
+        button: "Add Product"
+      edit:
+        title: "Upade Product"
+        button: "Save"
+
