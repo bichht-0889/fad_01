@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   has_many :orders, through: :order_items
   has_many :user_rates, through: :rates, source: :user
   has_many :user_comments, through: :comments, source: :user
+  mount_uploader :picture, PictureUploader
   scope :get_category_id, ->(category_id){product category_id}
 
   def self.product category_id
@@ -14,4 +15,5 @@ class Product < ApplicationRecord
   end
   scope :find_by_ids, ->(ids){where id: ids}
   scope :load_product_by_created, ->{order created_at: :desc}
+  scope :search_by_name, ->(name){where("name like ?", "%#{name}%")}
 end

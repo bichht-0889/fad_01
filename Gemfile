@@ -25,8 +25,11 @@ gem "uglifier", ">= 1.3.0"
 gem "font-awesome-rails"
 gem "font-awesome-sass"
 gem "jquery-rails", "~> 4.3", ">= 4.3.3"
+gem "whenever", require: false
 gem "will_paginate"
 
+gem "chartkick"
+gem "groupdate"
 gem "rateyo-rails"
 
 group :development, :test do

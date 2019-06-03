@@ -1,0 +1,34 @@
+<div class="wrapper ">
+  <div class="sidebar" data-color="white" data-active-color="danger">
+    <div class="logo">
+      <div class="logo-image-small simple-text logo-mini">
+        <%= image_tag @current_user.picture.url.to_s, size: "50x50" %>
+      </div>
+      <b><%= @current_user.name %></b>
+    </div>
+    <div class="sidebar-wrapper">
+      <ul class="nav">
+        <li class="active ">
+          <i class="fa fa-university"></i>
+          <%= link_to t("label.dashboard"), admin_statistics_path %>
+        </li>
+        <li>
+          <i class="fa fa-user"></i>
+          <%= link_to t("label.manage_user"), admin_users_path %>
+        </li><br>
+        <li>
+          <i class="fa fa-bookmark"></i>
+          <%= link_to t("label.manage_order"), admin_orders_path %>
+        </li>
+        <br>
+        <li>
+          <i class="fa fa-yelp"></i>
+          <%= link_to t("label.manage_suggestion"), admin_sugests_path %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-panel">
+    <%= yield :content %>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<tr>
+  <td  class="admin_product_images">
+    <%= image_tag product.picture_url %>
+  </td>
+  <td><%= link_to product.name, product_path(product) %></td>
+  <td><%= number_to_currency product.price %></td>
+  <td><%= product.quantity %></td>
+  <td><%= product.avg_rating %></td>
+  <td>
+    <span><%= link_to t(".delete"),admin_product_path(product), method: :delete, class: "btn btn-danger" %></span>
+    <span><%= link_to t(".edit"),edit_admin_product_path(product), class: "btn btn-success" %></span>
+  </td>
+</tr>
+

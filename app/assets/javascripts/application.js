@@ -20,3 +20,5 @@
 //= require turbolinks
 //= require_tree .
 //= require jquery.rateyo
+//= require chartkick
+//= require Chart.bundle
