@@ -4,7 +4,11 @@
       <div class="productinfo text-center">
         <%= link_to image_tag(product.picture), product,class: "pic-1", alt: t("products.alt_img") %>
         <h2><%= number_to_currency product.price %></h2>
+        <div class="rateyo-readonly-widg text-center"></div>
         <p><h2><%= product.name %></h2></p>
+        <div class="rate_point_lb">
+          <p class="rate_point hidden"><%= product.avg_rating %></p>
+        </div>
         <% if logged_in? %>
           <%= form_for @order_item, remote: true do |f| %>
             <%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %>

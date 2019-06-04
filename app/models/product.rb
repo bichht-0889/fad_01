@@ -15,4 +15,5 @@ class Product < ApplicationRecord
   end
   scope :find_by_ids, ->(ids){where id: ids}
   scope :load_product_by_created, -> {order created_at: :desc}
+  scope :search_by_name, ->(name){where("name like ?", "%#{name}%")}
 end
