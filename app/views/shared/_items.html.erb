@@ -1,0 +1,9 @@
+<div class="features_items">
+  <h2 class="title text-center"><%= t("label.items") %></h2>
+  <div class="row">
+    <%= render @products %>
+  </div>
+  <div class="row">
+    <%= will_paginate @products, class: "pagination" %>
+  </div>
+</div>

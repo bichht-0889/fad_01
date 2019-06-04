@@ -1,0 +1,3 @@
+$('#total').html('<%= current_order.total_price %>');
+$('#cart').html('<%= j render 'shared/cart' %>');
+$("#note-<%= @quantity_order_item .id %>").html('<%= @note %>');

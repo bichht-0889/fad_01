@@ -1,0 +1,28 @@
+app:
+  user:
+    name_max_length: 50
+    email_max_length: 255
+    password_min_length: 6
+    phone_max_length: 10
+    size: 5
+  order_items:
+    plus: 1
+  order:
+    plus: 1
+  uploaders:
+    picture:
+      size: 400
+  mailers:
+    application:
+      email: "vantri27051998@gmail.com"
+config:
+  development:
+    port: "587"
+    host: "localhost:3000"
+pages:
+  per_page5: 5
+  per_page9: 9
+products:
+  cur_slide_items: 3
+  trend: 10
+  news: 5

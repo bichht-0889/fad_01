@@ -1,0 +1,186 @@
+en:
+  title: "food & drink"
+  static_pages:
+    home:
+      title: "Home"
+  models:
+    user:
+      bug_size: "size picture not less than %{size}MB"
+    order_item:
+      product_nil: "is not valid or is not active."
+      order_nil: "is not a valid order."
+  web_info:
+    phone: " +2 95 01 88 821"
+    email: " info@domain.com"
+    address: " Address: 16 Ly Thuong Kiet street"
+  label:
+    account: "Account"
+    cart: "Cart"
+    login: "Login"
+    home: "Home"
+    categorie: "Categories"
+    foods: "Foods"
+    drinks: "Drinks"
+    suggestion: "Suggestion"
+    contact: "Contact"
+    toggle_navi: "Toggle navigation"
+    recommend_item: "recommended items"
+    all: "All"
+    new_item: "New products"
+    items: "Items"
+    sign_in: "Sign up"
+    setting: "Setting"
+    logout: "Log out"
+    add_cart: "Add to cart"
+    all_items: "Hot Items"
+    submit: "Submit"
+    rating: "Rating: "
+    search: "Search"
+  title:
+    detail: "Detail"
+  footer:
+    copyright: "Copyright © 2019 Foods & Drinks. All rights reserved."
+    text1: "Get the most recent updates from
+            our site and be updated your self..."
+    about: "About Foods & Drinks shop"
+    info: "Shop information"
+    carres: "Careers"
+    location: "Store Location"
+    terms: "Terms of Use"
+    privecy: "Privecy Policy"
+    refund: "Refund Policy"
+    help: "Online Help"
+    contact: "Contact Us"
+    order: "Order Status"
+    service: "Service"
+    policies: "Policies"
+  controllers:
+    user:
+      sign_up_success: "Acount %{name} created date: %{date}. Please check
+                        your email to activate your account."
+      id_not_found: "Your id not foud!"
+      update_success: "Your update successfully!"
+      not_login: "Your must login!"
+    account_activation:
+      activate_success: "Account activated!"
+      activate_danger: "Invalid activation link"
+    session:
+      account_not_activated: "Acount must activate!"
+      email_pass_bug: "Email/password not found!"
+    order_item:
+      delete_success: "Delete successfully!"
+      delete_bug: "Delete bug!"
+      max_quantity: "Maximum %{number}"
+      order_not_found: "Order not found!"
+      quantity_zero: "Produc out of quantity!"
+      product_not_found: "Product not found!"
+    cart:
+      order_not_exists: "Order not exists!"
+    checkout:
+      order_not_exists: "Order not exists!"
+    history_order:
+      not_found_order: "Order not found!"
+  users:
+    new:
+      title: "Sign up"
+      title_form: "New User Signup!"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      pass_confirm: "Confirmation"
+      phone: "Phone number"
+      address: "Address"
+      img_user: "user.jpg"
+    edit:
+      title: "Update Profile"
+    form:
+      img_user: "user.jpg"
+      title: "Sign up"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      pass_confirm: "Confirmation"
+      phone: "Phone number"
+      address: "Address"
+      img_user: "user.jpg"
+    show:
+      title: "%{name}"
+  sessions:
+    new:
+      title: "Sign in"
+      email: "Email"
+      password: "Password"
+      new_user: "Create user"
+      link_signup: "Sign up"
+      title_signin: "Login to your account"
+  suggestions:
+    placeholder_text_area: "Your Message Here"
+    placeholder_title: "Title"
+    create_success: "Created Suggestion success!"
+  user_mailer:
+    account_activation:
+      title: "Food && Drink"
+      hi: "Hi"
+      welcom_to: "Welcome to the Food & Drink! Click on the link
+                  below to activate your account:"
+      activate: "Activate"
+  mailers:
+    user:
+      account_activation: "Account activation"
+  uploaders:
+    img: "user.jpg"
+
+  products:
+    alt_img: "Foods"
+    product_not_found: "Product not found"
+    index:
+      title: "Home"
+    write_cmt: "Write Your Review"
+    err_cmt: "Error"
+  helpers:
+    session:
+      bug_create_order: "Bug create order!"
+  carts:
+    index:
+      title: "Shop cart"
+  shared:
+    cart:
+      home: "Home"
+      shoping_cart: "Shopping Cart"
+      item: "Item"
+      name: "Name"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total"
+      cart_sub: "Cart Sub Total"
+      eco_tax: "Eco Tax"
+      shipping_cost: "Shopping Cost"
+      total: "Total"
+      histotry: "History"
+      checkout: "Check Out"
+      time: "Time"
+  orders:
+    order:
+      name: "Name"
+      quantity: "Quantity"
+      subtotal: "SubTotal"
+      status: "Status"
+      cancel: "Cancel"
+      are_you_sure: "Are you Sure?"
+  history_orders:
+    index:
+      confirm: "Confirm"
+      cancel: "Cancel"
+      accept: "Accept"
+      refuse: "Refuse"
+      finish: "Finish"
+      no-confirm: "Order confirm No transaction history!!"
+      no_cancel: "Order cancel No transaction history!!"
+      no_accept: "Order accept No transaction history!!"
+      no_refuse: "Order refuse No transaction history!!"
+      no_finish: "Order finish No transaction history!!"
+  evaluators:
+    alert:
+      bug: "not valid."
+      confirm_delete: "Are you sure?"
+      confirm_cancel: "Are you cancel?"
