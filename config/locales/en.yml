@@ -21,7 +21,7 @@ en:
     categorie: "Categories"
     foods: "Foods"
     drinks: "Drinks"
-    blog: "Blog"
+    suggestion: "Suggestion"
     contact: "Contact"
     toggle_navi: "Toggle navigation"
     recommend_item: "recommended items"
@@ -113,6 +113,10 @@ en:
       new_user: "Create user"
       link_signup: "Sign up"
       title_signin: "Login to your account"
+  suggestions:
+    placeholder_text_area: "Your Message Here"
+    placeholder_title: "Title"
+    create_success: "Created Suggestion success!"
   user_mailer:
     account_activation:
       title: "Food && Drink"

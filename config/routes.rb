@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
   resources :checkouts, onlyl: :index
   resources :history_orders
+  resources :sugests
 end
