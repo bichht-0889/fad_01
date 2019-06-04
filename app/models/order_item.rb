@@ -9,7 +9,7 @@ class OrderItem < ApplicationRecord
   def subtotal
     quantity * price
   end
-  
+
   scope :trend_items, -> do
     group(:product_id)
     .order("SUM(quantity) DESC")
