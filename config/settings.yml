@@ -22,6 +22,7 @@ config:
 pages:
   per_page5: 5
   per_page9: 9
+  per_page10: 10
 products:
   cur_slide_items: 3
   trend: 10

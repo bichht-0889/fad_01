@@ -1,5 +1,8 @@
 {
   "name": "faddd",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": "10.16.0"
+  }
 }
