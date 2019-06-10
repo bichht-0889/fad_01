@@ -72,18 +72,6 @@ module SessionsHelper
     redirect_to login_path
   end
 
-  def admin_user
-    if logged_in?
-      unless current_user.admin?
-        flash[:danger] = t "helpers.session.not_admin"
-        redirect_to root_path
-      end
-    else
-      flash[:info] = t "helpers.session.not_logged_in"
-      redirect_to login_path
-    end
-  end
-
   def categories
     Category.all
   end

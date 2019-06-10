@@ -7,7 +7,7 @@
           <!--product-details-->
           <div class="col-sm-5">
             <div class="view-product">
-              <%= link_to image_tag(@product.picture),class: "pic-1", alt: t("products.alt_img") %>
+              <%= link_to image_tag(@product.picture.url.to_s),class: "pic-1", alt: t("products.alt_img") %>
             </div>
             <div id="similar-product" class="carousel slide" data-ride="carousel">
               <!-- Wrapper for slides -->
@@ -51,7 +51,7 @@
                     <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus">-
                     </button>
 
-                    <%= f.number_field :quantity, value: Settings.app.product.value, min: Settings.app.product.min, max: @product.quantity , class: " quantity" %>
+                    <%= f.number_field :quantity, value: Settings.app.products.value, min: Settings.app.products.min, max: @product.quantity , class: " quantity" %>
                     <%= f.hidden_field :product_id, value: @product.id %>
                     <%= f.hidden_field :price, value: @product.price %>
 
