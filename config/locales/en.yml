@@ -324,3 +324,8 @@ en:
       cancel: "Cancel"
       info_order: "Information Order"
       total_price: "Total Price"
+  spec:
+    model:
+      name_blank: "can't be blank"
+      is_invalid: "is invalid"
+      email_already: "has already been taken"
