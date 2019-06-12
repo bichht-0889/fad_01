@@ -51,8 +51,7 @@ node_modules/
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml
-/public/uploads
-
+/public/*
 # Ignore application configuration
 /config/application.yml
 /config/database.yml

@@ -38,6 +38,8 @@ en:
     setting: "Setting"
     profile: "Profile"
     history_order: "History order"
+    cr_suggestion: "Create product by customer'suggestion"
+    search: "Search"
     manage_user: "Manage Users"
     manage_order: "Manage Orders"
     statis: "Statistical"
@@ -60,7 +62,25 @@ en:
     order: "Order Status"
     service: "Service"
     policies: "Policies"
+  sugests:
+    title: "Create product"
+    button: "Create"
+    index:
+      title: "Sugestion"
+    form:
+      name: "Enter name of product"
+      price: "Enter price of product"
+      description: "Enter description of product"
+      quantity: "Enter quantity of product"
+  suggestions:
+    placeholder_title: "Enter your Sugestion' Title"
+    placeholder_text_area: "Enter your Sugestion'description"
+    placeholder_new_category: "Enter you New Category"
+    create_success: "Thank you for your sugestion!"
+    other: "Other"
   controllers:
+    product:
+      success: "Create product successfully"
     user:
       sign_up_success: "Acount %{name} created date: %{date}. Please check
                         your email to activate your account."
@@ -100,8 +120,20 @@ en:
         not_found_order: "Order not found!"
         accept_success: "Order Aceepted!"
         refuse_success: "Order Refused!"
+        finish_success: "Order Finish!"
         bug_update: "Bug update: %{name}!"
         not_found_status: "Access bug!"
+      sugests:
+        error: "Error"
+        success: "Success"
+        bug_update: "Bug update: %{name}!"
+        accept_success: "Sugest acepted"
+        refuse_success: "Sugest Refused!"
+        sug_done: "Sugest is handled"
+        refuse: "Suggestion refused"
+        cate_success: "Created new category"
+        cate_fisrt: "Please create category: '%{name}' first"
+        not_found: "Not found"
       product:
         post_success: "Product add successfully!"
         post_danger: "Product add bug!"
@@ -242,6 +274,15 @@ en:
       no_accept: "Order accept No transaction history!!"
       no_refuse: "Order refuse No transaction history!!"
       no_finish: "Order finish No transaction history!!"
+  evaluators:
+    alert:
+      bug: "not valid."
+      confirm_delete: "Are you sure?"
+      confirm_cancel: "Are you cancel?"
+      finish: "Are you finish?"
+  categories:
+    category_not_found: "Category is not found"
+    cate_created: "Category created"
   alert:
     bug: "not valid."
     confirm_delete: "Are you sure?"
@@ -280,6 +321,11 @@ en:
         title: "Admin Order"
         total: "Total"
         search: "Search"
+  dashboard:
+    all_user: "All Users"
+    all_order: "All Order"
+    all_product: "All Product"
+    detail: "Detail"
     products:
       form:
         name: "Name"
@@ -324,3 +370,8 @@ en:
       cancel: "Cancel"
       info_order: "Information Order"
       total_price: "Total Price"
+  spec:
+    model:
+      name_blank: "can't be blank"
+      is_invalid: "is invalid"
+      email_already: "has already been taken"

@@ -31,4 +31,11 @@ class CartsController < ApplicationController
     flash[:info] = t "controllers.cart.order_not_exitst"
     redirect_to root_path
   end
+
+  def show
+    @order = Order.find_by id: params[:id]
+    return @order
+    flash[:info] = t "controllers.cart.order_not_exitst"
+    redirect_to root_path
+  end
 end

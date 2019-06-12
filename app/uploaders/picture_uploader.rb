@@ -16,7 +16,7 @@ class PictureUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png)
   end
 
-  def default_url
-    ActionController::Base.helpers.asset_path("user.jpg")
+  def default_url *_args
+    "/upload/#{model.class.to_s.underscore}/image/image-#{rand(1..10)}.jpg"
   end
 end
