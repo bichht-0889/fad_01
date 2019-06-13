@@ -1,4 +1,4 @@
- <table class="table table-striped">
+<table class="table table-striped">
   <thead>
     <tr>
       <th><%= t ".name" %></th>
@@ -9,12 +9,12 @@
   </thead>
   <tbody>
     <% order.order_items.each do |ot| %>
-    <tr>
-      <td><%= ot.product.name %></td>
-      <td><%= ot.quantity %></td>
-      <td><%= ot.subtotal %></td>
-      <td><%= order.status %></td>
-    </tr>
+      <tr>
+        <td><%= ot.product.name %></td>
+        <td><%= ot.quantity %></td>
+        <td><%= ot.subtotal %></td>
+        <td><%= order.status %></td>
+      </tr>
     <% end %>
     <tr>
       <td colspan="3">
@@ -25,9 +25,17 @@
         <p>
           <% if order.confirm? %>
             <span><%= link_to t(".accept"), admin_order_path(order, status: :accept),
-               method: :put, data: {confirm: I18n.t("evaluators.alert.confirm_cancel")}, class: "btn btn-success" %>
+                method: :put, data: {confirm: I18n.t("evaluators.alert.confirm_cancel")}, class: "btn btn-success" %>
             </span>
-            <span><%= link_to t(".refuse"), admin_order_path(order, status: :refuse), method: :put, data: {confirm: I18n.t("evaluators.alert.confirm_cancel")}, class: "btn btn-danger" %>
+            <span>
+              <%= link_to t(".refuse"), admin_order_path(order, status: :refuse),
+                method: :put, data: {confirm: I18n.t("evaluators.alert.confirm_cancel")}, class: "btn btn-danger" %>
+            </span>
+          <% end %>
+          <% if order.accept? %>
+            <span>
+              <%= link_to t(".finish"), admin_order_path(order, status: :finish),
+                method: :put, data: {confirm: I18n.t("evaluators.alert.finish")}, class: "btn btn-success" %>
             </span>
           <% end %>
         </p>

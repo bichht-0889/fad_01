@@ -30,6 +30,11 @@ gem "rateyo-rails"
 gem "whenever", require: false
 gem "will_paginate"
 
+gem "chartkick"
+gem "devise"
+gem "groupdate"
+gem "rateyo-rails"
+
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
   gem "factory_bot_rails"
@@ -37,7 +42,6 @@ group :development, :test do
 end
 
 group :production do
-  gem "fog", "1.42"
   gem "pg"
 end
 

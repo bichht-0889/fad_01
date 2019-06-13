@@ -1,6 +1,6 @@
 module ProductsHelper
   def filtering_params params
-    params.slice :get_category_id
+    params.slice(:get_category_id, :search_by_name)
   end
 
   def load_filter
@@ -18,7 +18,7 @@ module ProductsHelper
       format.js {}
     end
   end
-
+  
   def load_trend_items
     trends = OrderItem.trend_items.limit(Settings.products.trend)
     list_ids = trends.map(&:product_id)

@@ -7,6 +7,6 @@ class StaticPagesController < ApplicationController
     @cur_slide_items = load_trend_items.take(Settings.products.cur_slide_items)
     @trend_items = load_trend_items.drop(Settings.products.cur_slide_items)
     @new_products = load_new_product
-    @order_item = current_order.order_items.new if logged_in?
+    @order_item = current_order.order_items.new if signed_in?
   end
 end

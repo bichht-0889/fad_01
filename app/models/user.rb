@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   attr_accessor :activation_token
   has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -20,7 +24,7 @@ class User < ApplicationRecord
   validates :phone, presence: true,
              length: {maximum: Settings.app.user.phone_max_length},
              format: {with: VALID_PHONE_REGEX}
-  has_secure_password
+
   validates :password, presence: true,
              length: {minimum: Settings.app.user.password_min_length},
              allow_nil: true
@@ -32,8 +36,9 @@ class User < ApplicationRecord
   scope :period_time, -> do
     where created_at: (Time.now - Settings.statis.one.month)..Time.now
   end
-  scope :date_start, ->(start){where("created_at >= ?",start)}
-  scope :date_end, ->(date_end){where("created_at <= ?",date_end)}
+  scope :date_start, ->(start){where("created_at >= ?", start)}
+  scope :date_end, ->(date_end){where("created_at <= ?", date_end)}
+  scope :users_activated, ->{where activated: true}
   def picture_size
     return unless picture.size > Settings.app.user.size.megabytes
     errors.add :picture, t("models.user.bug_size"),

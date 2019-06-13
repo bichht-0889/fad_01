@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_user, except: %i(index create new)
   before_action :logged_in_user, except: %i(new show create)
   before_action :correct_user, only: %i(edit update)
@@ -48,7 +49,7 @@ class UsersController < ApplicationController
   end
 
   def logged_in_user
-    return if logged_in?
+    return if signed_in?
     store_location
     flash[:danger] = t "controllers.user.not_login"
     redirect_to login_path

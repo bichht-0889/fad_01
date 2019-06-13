@@ -1,20 +1,23 @@
-<div class="container">
-  <h1><%= t ".list_user" %></h1>
-  <h3><%= t ".total_user" %>: <%= User.all.size %> </h3>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><%= t ".image" %></th>
-        <th><%= t ".name" %></th>
-        <th><%= t ".email" %></th>
-        <th><%= t ".phone" %></th>
-        <th><%= t ".total_order" %></th>
-        <th><%= t ".control" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @user %>
-    </tbody>
-  </table>
-  <%= will_paginate @user, class: "btn btn-success" %>
-</div>
+<% content_for :content do %>
+  <div class="container">
+    <h1><%= t ".list_user" %></h1>
+    <h3><%= t ".total_user" %>: <%= load_size_users %> </h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t ".image" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".email" %></th>
+          <th><%= t ".phone" %></th>
+          <th><%= t ".total_order" %></th>
+          <th><%= t ".control" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @user %>
+      </tbody>
+    </table>
+    <%= will_paginate @user, class: "btn btn-success" %>
+  </div>
+<% end %>
+<%= render "users/admin" %>

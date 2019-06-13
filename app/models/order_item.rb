@@ -11,10 +11,26 @@ class OrderItem < ApplicationRecord
     quantity * price
   end
 
+  scope :stock_take, -> do
+    joins(:product)
+      .group(:name)
+      .pluck([
+               "name",
+      "SUM(order_items.quantity)",
+      "SUM(order_items.price)"
+             ])
+  end
+
+  scope :stock_take_price, -> do
+    joins(:product)
+      .group(:name)
+      .sum(:price)
+  end
+
   scope :trend_items, -> do
     group(:product_id)
-    .order("SUM(quantity) DESC")
-    .select("product_id, SUM(quantity) AS total")
+      .order("SUM(quantity) DESC")
+      .select("product_id, SUM(quantity) AS total")
   end
 
   private

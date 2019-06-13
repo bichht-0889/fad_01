@@ -1,21 +1,4 @@
 module SessionsHelper
-  def log_in user
-    session[:user_id] = user.id
-  end
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def current_user? user
-    return true if current_user.admin?
-    user == current_user
-  end
-
-  def logged_in?
-    current_user.present?
-  end
-
   def redirect_back_or default
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)
@@ -36,7 +19,7 @@ module SessionsHelper
   end
 
   def current_order
-    return unless logged_in?
+    return unless signed_in?
     if current_user.orders.waiting.present?
       session[:order_id] = current_user.orders.find_by(status: :waiting).id
       return current_user.orders.find_by(status: :waiting)
@@ -54,9 +37,9 @@ module SessionsHelper
   end
 
   def check_loggin
-    return if logged_in?
+    return if signed_in?
     store_location
-    flash[:info] = t "helpers.session.not_logged_in"
+    flash[:info] = t "helpers.session.not_signed_in"
     redirect_to login_path
   end
 
@@ -66,8 +49,8 @@ module SessionsHelper
     redirect_to root_path
   end
 
-  def logged_in_user
-    return if logged_in?
+  def signed_in_user
+    return if signed_in?
     flash[:danger] = t "controllers.user.not_login"
     redirect_to login_path
   end

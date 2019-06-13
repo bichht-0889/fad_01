@@ -35,9 +35,9 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   host = Settings.config.development.host
-  config.action_mailer.default_url_options = {host: host, protocol: "http"}
+  config.action_mailer.default_url_options = {host: "localhost", port: 3000}
   ActionMailer::Base.smtp_settings = {
-    address: ENV["ADDRESS"],
+    address: "smtp.gmail.com",
     port: Settings.config.development.port,
     authentication: :plain,
     user_name: ENV["USER_NAME"],

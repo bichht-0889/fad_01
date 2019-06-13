@@ -6,8 +6,6 @@ one:
   address: MyString
   phone: MyString
   role: 1
-  password_digest: MyString
-  remember_digest: MyString
   activation_digest: MyString
   activated: false
   activated_at: 2019-05-17 16:36:36
@@ -19,8 +17,6 @@ two:
   address: MyString
   phone: MyString
   role: 1
-  password_digest: MyString
-  remember_digest: MyString
   activation_digest: MyString
   activated: false
   activated_at: 2019-05-17 16:36:36

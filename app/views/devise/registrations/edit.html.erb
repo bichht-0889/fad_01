@@ -1,0 +1,61 @@
+<section id="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="login-form">
+          <%= form_for(resource, as: resource_name,
+            url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: t("devise.label.email") %>
+            </div>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>
+                <%= t("devise.label.cur_wait") %>
+                <%= resource.unconfirmed_email %>
+              </div>
+            <% end %>
+
+            <div class="field">
+              <%= f.label :password %> <i><%= t("devise.label.le_blank") %></i><br />
+              <%= f.password_field :password, autocomplete: t("devise.label.new_pass") %>
+              <% if @minimum_password_length %>
+                <br />
+                <em>
+                  <%= @minimum_password_length %>
+                  <%= t("devise.label.char_mini") %>
+                </em>
+              <% end %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: t("devise.label.new_pass") %>
+            </div>
+
+            <div class="field">
+              <%= f.label :current_password %> <i><%= t("devise.label.we_need") %></i><br />
+              <%= f.password_field :current_password, autocomplete: t("devise.label.cur_pass") %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit t("devise.label.update") %>
+            </div>
+          <% end %>
+
+          <h3><%= t("devise.label.cancel_acc") %></h3>
+
+          <p><%= t("devise.label.unhappy") %>
+            <%= button_to t("devise.label.cancel_acc"), registration_path(resource_name),
+              data: {confirm: t("devise.label.are_u_sure")}, method: :delete %>
+          </p>
+
+          <%= link_to t("devise.label.back"), :back %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

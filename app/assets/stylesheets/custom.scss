@@ -196,3 +196,19 @@
   width: 80px;
   height: 60px;
 }
+
+.stock_scroll{
+  height:400px;
+  overflow-y: scroll;
+  padding:5px;
+  border: 1px solid #ccc;
+}
+
+#user_remember_me {
+  height: 20px;
+}
+
+.field em{
+  padding: 0px;
+  border: none;
+}
