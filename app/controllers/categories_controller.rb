@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :check_loggin, :check_role_admin
+  before_action :load_category, only: %i(edit update destroy)
 
   def new
     @category = Category.new
@@ -22,9 +23,21 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category.close!
+    flash[:success] = t "categories.notice_del"
+    redirect_to categories_path
+  rescue
+    flash[:danger] = t "categories.notice_del_fail"
+    redirect_to categories_path
+  end
+
   private
 
-  def category_params
-    params.require(:category).permit :name
+  def load_category
+    @category = Category.find_by id: params[:id]
+    return if @category
+    flash[:info] = t "categories.category_not_found"
+    redirect_to categories_path
   end
 end

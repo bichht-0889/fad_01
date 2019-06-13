@@ -1,24 +1,29 @@
 <%= provide :title, t(".title") %>
-<div class="container">
-  <h1><%= t ".title" %></h1>
-  <h3><%= t ".total_product" %>: <%= Product.all.size %> </h3>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><%= t ".image" %></th>
-        <th><%= t ".name" %></th>
-        <th><%= t ".price" %></th>
-        <th><%= t ".quantity" %></th>
-        <th><%= t ".rating" %></th>
-        <th><%= t ".control" %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @product %>
-    </tbody>
-  </table>
-  <%= will_paginate @product, class: "btn btn-success" %>
-  <div>
-    <span class="btn btn-info"><%= link_to t(".button"), new_admin_product_path %></span>
+<% content_for :content do %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h1><%= t ".title" %></h1>
+      </div>
+      <span class="btn btn-info"><%= link_to t("label.create"), new_admin_product_path %></span>
+    </div>
+    <h3><%= t ".total_product" %>: <%= load_size_products %> </h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th><%= t ".image" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".price" %></th>
+          <th><%= t ".quantity" %></th>
+          <th><%= t ".rating" %></th>
+          <th><%= t ".control" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @product %>
+      </tbody>
+    </table>
+    <%= will_paginate @product, class: "btn btn-success" %>
   </div>
-</div>
+<% end %>
+<%= render "users/admin" %>

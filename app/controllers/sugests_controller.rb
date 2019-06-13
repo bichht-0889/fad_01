@@ -1,7 +1,7 @@
 class SugestsController < ApplicationController
-  before_action :load_category, only: %i(create)
+  before_action :load_category, only: :create
   def index
-    @categories = Category.all
+    @categories = Category.order_categories
   end
 
   def create

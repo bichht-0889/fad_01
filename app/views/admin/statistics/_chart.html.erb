@@ -1,0 +1,97 @@
+<div class="category-tab shop-details-tab">
+  <div class="col-sm-12">
+    <ul class="nav nav-tabs">
+      <li><a href="#users" data-toggle="tab"><%= t("label.users") %></a></li>
+      <li class="active"><a href="#orders" data-toggle="tab"><%= t("label.orders") %></a></li>
+      <li><a href="#products" data-toggle="tab"><%= t("label.products") %></a></li>
+    </ul>
+  </div>
+  <div class="tab-content">
+    <div class="tab-pane fade" id="users">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-4 offset-md-2"><%= t ("dashboard.label.user_acti") %></div>
+            <div class="col-md-4"><%= @users_activated %>/<%= load_size_users %></div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 offset-md-2"><%= t ("dashboard.label.user_regi") %></div>
+            <div class="col-md-4"><%= @users_this_month %></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="col-md-12">
+            <%= pie_chart @chart_activated_user.count %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= column_chart @users.count %>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-pane fade active in" id="orders">
+      <div class="row">
+        <div class="col-md-6">
+          <h4><%= t ("dashboard.label.order_by_day") %></h4>
+          <%= pie_chart @orders_bym.count %>
+        </div>
+        <div class="col-md-6">
+          <h4><%= t ("dashboard.label.order_by_tmonth") %></h4>
+          <%= line_chart @orders_byd.count %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h4><%= t ("dashboard.label.order_by_dayf") %></h4>
+          <%= form_tag admin_statistics_path, method: :get do %>
+          <div class="row">
+            <div class="form-group col-md-3">
+              <input type="date" value=<%= params[:first] %> min="2019-01-01" name="first" class="form-control" {model:
+                ActiveSupport::TimeZone, default: Time.zone.name}>
+            </div>
+            <div class="form-group col-md-3">
+              <input type="date" value=<%= params[:last] %> max=<%= Date.today %> name="last" class="form-control">
+            </div>
+            <%= submit_tag "Show", class: "btn btn-success" %>
+          </div>
+          <% end %>
+        </div>
+        <% if @orders_fillter %>
+        <div class="col-md-12">
+          <%= column_chart @orders_fillter.count %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="products">
+      <div class="row">
+        <div class="col-md-12">
+          <%= column_chart @stock_take %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="col-md-6" id="list-stock">
+            <div data-spy="scroll" data-offset="20" class="stock_scroll">
+              <%= render partial: "top_product", :locals => {
+                :stock => @stockq} %>
+            </div>
+          </div>
+          <div class="col-md-6" id="list-stock">
+            <div data-spy="scroll" data-offset="20" class="stock_scroll">
+              <%= render partial: "top_product", :locals => {
+                :stock => @stockp} %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <%= column_chart @stock_price %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

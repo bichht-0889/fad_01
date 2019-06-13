@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th class="col-md-4"><%= t ("dashboard.label.name") %></th>
+    <th class="col-md-4"><%= t ("dashboard.label.quantity") %></th>
+    <th class="col-md-4"><%= t ("dashboard.label.price") %></th>
+  </tr>
+  <% stock.each do |product| %>
+    <tr>
+      <td class="col-md-4"><%= product[0] %></td>
+      <td class="col-md-4"><%= product[1] %></td>
+      <td class="col-md-4"><%= product[2] %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,46 +1,130 @@
-<div class="container">
-  <%= form_tag admin_statistics_path, method: :get do %>
-      <div class="form-group col-md-3">
-        <input type="date" name="first" class="form-control">
+<% content_for :content do %>
+<div class="content">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-globe text-warning"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category"><%= t ("dashboard.all_user") %></p>
+                <p class="card-title"><%= load_size_users %><p>
+              </div>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <div class="row">
+                <div class="col-md-8 offset-md-2"><%= t ("dashboard.label.user_acti") %></div>
+                <div class="col-md-2"><%= @users_activated %>/<%= @users_activated %></div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-md-8 offset-md-2"><%= t ("dashboard.label.user_regi") %></div>
+                <div class="col-md-2"><%= @users_this_month %></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-chevron-circle-right"></i>
+            <%= link_to t("dashboard.detail"), admin_users_path %>
+          </div>
+        </div>
       </div>
-      <div class="form-group col-md-3">
-        <input type="date" name="last" class="form-control">
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-money-coins text-success"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category"><%= t ("dashboard.all_order") %></p>
+                <p class="card-title"><%= load_size_orders %><p>
+              </div>
+            </div>
+          </div>
+          <ul>
+            <li>
+              <div class="row">
+                <div class="col-md-8 offset-md-2"><%= t ("dashboard.label.total_order") %></div>
+                <div class="col-md-2"><%= @orders_this_month %></div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-md-2"><%= t ("dashboard.label.revenue") %></div>
+                <div class="col-md-3"><%= t ("dashboard.label.this_month") %></div>
+                <div class="col-md-2"><%= number_to_currency @revenue_this_month %></div>
+                <div class="col-md-1"><%= t ("dashboard.label.total") %></div>
+                <div class="col-md-2"><%= number_to_currency @revenue %></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-chevron-circle-right"></i>
+            <%= link_to t("dashboard.detail"), admin_orders_path %>
+          </div>
+        </div>
       </div>
-    <%= submit_tag "search", class: "btn btn-success" %>
-    <b><%= t ".start" %>: <i><%= params[:first] %></i> <%= t ".end" %>: <i><%= params[:last] %></i></b>
-  <% end %>
-  <h2><%= t "statistical_user" %></h2>
-  <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th><%= t ".quantity_member" %></th>
-          <th><%= t ".quantity_block" %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= @users.size %></td>
-          <td><%= @users.block.size %></td>
-        </tr>
-      </tbody>
-  </table><hr>
-  <h2><%= t "statistical_order" %></h2>
-  <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th><%= t ".quantity_order" %></th>
-          <th><%= t ".quantity_finish" %></th>
-          <th><%= t ".quantity_cancel" %></th>
-          <th><%= t ".total_price" %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><%= @orders.size %></td>
-          <td><%= @orders.finish.size %></td>
-          <td><%= @orders.cancel.size %></td>
-          <td><%= number_to_currency @orders.finish.sum(:total_price) %></td>
-        </tr>
-      </tbody>
-  </table><hr>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6">
+      <div class="card card-stats">
+        <div class="card-body ">
+          <div class="row">
+            <div class="col-5 col-md-4">
+              <div class="icon-big text-center icon-warning">
+                <i class="nc-icon nc-vector text-danger"></i>
+              </div>
+            </div>
+            <div class="col-7 col-md-8">
+              <div class="numbers">
+                <p class="card-category"><%= t ("dashboard.all_product") %></p>
+                <p class="card-title"><%= load_size_products %><p>
+                    <p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="text-center"><%= t ("dashboard.label.best_seller") %></h6>
+              <%= render partial: "top_product", :locals => {
+                :stock => @stock_quantiy} %>  
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-center"><%= t ("dashboard.label.high_pr") %></h6>
+              <%= render partial: "top_product", :locals => {
+                :stock => @stock_pr} %>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer ">
+          <hr>
+          <div class="stats">
+            <i class="fa fa-chevron-circle-right"></i>
+            <%= link_to t("dashboard.detail"), products_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= render "chart" %>
 </div>
+<% end %>
+<%= render "users/admin" %>

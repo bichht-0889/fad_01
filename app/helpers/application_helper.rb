@@ -11,4 +11,20 @@ module ApplicationHelper
   def load_categories
     @categories = Category.all
   end
+
+  def load_size_users
+    User.count
+  end
+
+  def load_size_orders
+    Order.count
+  end
+
+  def load_size_products
+    Product.count
+  end
+
+  def load_size_categories
+    Category.count
+  end
 end

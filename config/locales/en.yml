@@ -43,6 +43,7 @@ en:
     manage_user: "Manage Users"
     manage_order: "Manage Orders"
     statis: "Statistical"
+    no_result: "0 result for %{name}"
   title_1:
     detail: "Detail"
     admin: "Admin"
@@ -205,7 +206,6 @@ en:
       quantity_cancel: "Quantity Cancel"
       total_price: "Total price"
       statistical_order: "Statistical Order"
-
   mailers:
     user:
       account_activation: "Account activation"
@@ -283,6 +283,8 @@ en:
   categories:
     category_not_found: "Category is not found"
     cate_created: "Category created"
+    notice_del: "Your acction success"
+    notice_del_fail: "Your acction fail"
   alert:
     bug: "not valid."
     confirm_delete: "Are you sure?"
@@ -349,6 +351,23 @@ en:
       edit:
         title: "Upade Product"
         button: "Save"
+    label:
+      user_acti: "Users activated:"
+      user_regi: "Users registed this month:"
+      total_order: "Total Order this month:"
+      revenue: "Revenue"
+      this_month: "This month"
+      best_seller: "Best seller"
+      name: "Name"
+      quantity: "Quantity"
+      price: "Price"
+      high_pr: "High Total Price"
+      order_by_tmonth: "Order by day this month:"
+      order_by_day: "Order by month:"
+      order_by_dayf: "Order by day from:"
+      pr_name: "Product Name"
+      total_quan: "Total Quantity"
+      total_price: "Total Price"
   order_mailer:
     order_confirm:
       name: "Name"

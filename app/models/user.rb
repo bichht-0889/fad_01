@@ -32,8 +32,9 @@ class User < ApplicationRecord
   scope :period_time, -> do
     where created_at: (Time.now - Settings.statis.one.month)..Time.now
   end
-  scope :date_start, ->(start){where("created_at >= ?",start)}
-  scope :date_end, ->(date_end){where("created_at <= ?",date_end)}
+  scope :date_start, ->(start){where("created_at >= ?", start)}
+  scope :date_end, ->(date_end){where("created_at <= ?", date_end)}
+  scope :users_activated, ->{where activated: true}
   def picture_size
     return unless picture.size > Settings.app.user.size.megabytes
     errors.add :picture, t("models.user.bug_size"),

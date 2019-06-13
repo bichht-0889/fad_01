@@ -1,5 +1,5 @@
 <tr>
-  <% if sugest.status == 1 %>
+  <% if sugest.new_cate? %>
     <td><%= t ("sugestions.other") %></td>
   <% else %>
     <td><%= sugest.category.name %></td>
