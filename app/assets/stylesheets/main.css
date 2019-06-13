@@ -219,12 +219,6 @@ a#scrollUp i{
 	background:#fff;
 }
 
-
-.header-bottom {
-  padding-bottom: 30px;
-  padding-top: 30px;
-}
-
 .navbar-collapse.collapse{
   padding-left: 0;
 }
@@ -264,7 +258,6 @@ a#scrollUp i{
   outline: medium none;
   padding-left: 10px;
   width: 155px;
-  background-image: url(./searchicon.png);
   background-repeat: no-repeat;
   background-position: 130px;
 }

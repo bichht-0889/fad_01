@@ -19,9 +19,12 @@ Rails.application.routes.draw do
   resources :checkouts, onlyl: :index
   resources :history_orders
   namespace :admin do
+    resources :products
     resources :orders
     resources :users
     resources :statistics
-    resources :products
+    resources :sugests
   end
+  resources :sugests
+  resources :categories
 end
