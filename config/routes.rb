@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   root "static_pages#home"
   
-  devise_for :users
   devise_scope :user do
     get "signin" => "devise/sessions#new"
     post "signin" => "devise/sessions#create"
     get "signout" => "devise/sessions#destroy"
   end
+
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
 
   resources :users
   resources :account_activations, only: :edit
