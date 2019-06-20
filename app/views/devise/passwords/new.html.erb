@@ -1,0 +1,28 @@
+<section id="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="login-form">
+          <h2><%= t("devise.label.forgot_ur_pass") %></h2>
+
+          <%= form_for(resource, as: resource_name,
+            url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true,
+                autocomplete: t("devise.label.email") %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit t("devise.label.send_rs_pass") %>
+            </div>
+          <% end %>
+
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
