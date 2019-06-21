@@ -1,45 +1,11 @@
+<%= provide :button, t("devise.label.signup") %>
+
 <section id="form">
   <div class="container">
     <div class="row">
       <div class="col-sm-4 col-sm-offset-4">
         <div class="login-form">
-          <%= form_for(resource, as: resource_name,
-            url: registration_path(resource_name)) do |f| %>
-            <%= render "devise/shared/error_messages", resource: resource %>
-
-            <div class="field">
-              <%= f.label :name %><br />
-              <%= f.text_field :name, autocomplete: t("devise.label.name") %>
-            </div>
-
-            <div class="field">
-              <%= f.label :email %><br />
-              <%= f.email_field :email, autofocus: true, autocomplete: t("devise.label.email") %>
-            </div>
-
-            <div class="field">
-              <%= f.label :phone %><br />
-              <%= f.email_field :phone, autocomplete: t("devise.label.phone") %>
-            </div>
-
-            <div class="field">
-              <%= f.label :password %>
-              <% if @minimum_password_length %>
-                <em id="noti_pass">(<%= @minimum_password_length %> <%= t("devise.label.char_mini") %>)</em>
-              <% end %><br />
-              <%= f.password_field :password, autocomplete: t("devise.label.new_pass") %>
-            </div>
-
-            <div class="field">
-              <%= f.label :password_confirmation %><br />
-              <%= f.password_field :password_confirmation, autocomplete: t("devise.label.new_pass") %>
-            </div>
-
-            <div class="actions">
-              <%= f.submit t("devise.label.signup") %>
-            </div>
-          <% end %>
-
+          <%= render "form" %>
           <%= render "devise/shared/links" %>
         </div>
       </div>

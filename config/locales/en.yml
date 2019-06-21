@@ -14,7 +14,6 @@ en:
     email: " info@domain.com"
     address: " Address: 16 Ly Thuong Kiet street"
   label:
-    account: "Account"
     cart: "Cart"
     login: "Login"
     home: "Home"
