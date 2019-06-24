@@ -1,5 +1,6 @@
 class CheckoutsController < ApplicationController
-  before_action :check_loggin, :load_order
+  authorize_resource class: false
+  before_action :load_order, only: :show
 
   def show; end
 

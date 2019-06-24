@@ -1,5 +1,5 @@
 class OrderItemsController < ApplicationController
-  before_action :check_loggin, :current_user
+  authorize_resource
   after_action :update_total_price
   before_action :load_order_item, only: %i(decrease increase update)
   before_action :load_order, only: %i(destroy subtotal_order update_total_price)

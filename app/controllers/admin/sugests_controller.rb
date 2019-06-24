@@ -1,5 +1,5 @@
 class Admin::SugestsController < ApplicationController
-  before_action :check_loggin, :check_role_admin
+  authorize_resource
   before_action :load_sugest, only: %i(update create_category create_product)
 
   def index

@@ -1,5 +1,6 @@
 class HistoryOrdersController < ApplicationController
-  before_action :check_loggin, :load_order, only: :index
+  authorize_resource class: false
+  before_action :load_order, only: :index
 
   def index
     @order_waiting = @orders.waiting

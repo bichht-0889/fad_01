@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  before_action :check_loggin
+  authorize_resource class: false
 
   def index
     @order = current_user.orders.waiting.first

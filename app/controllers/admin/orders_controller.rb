@@ -1,5 +1,5 @@
 class Admin::OrdersController < ApplicationController
-  before_action :check_loggin, :check_role_admin
+  authorize_resource
   before_action :load_order_admin, only: :update
 
   def index
